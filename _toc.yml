@@ -1,0 +1,37 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Planet Formation
+    chapters:
+    - file: Planet-formation/Science
+    - file: Planet-formation/Planet_formation/Main_en_Planet_formation
+      sections:
+      - file: Planet-formation/Planet_formation/Prequel
+      - file: Planet-formation/Planet_formation/Star_formation
+      - file: Planet-formation/Planet_formation/PPD
+      - file: Planet-formation/Planet_formation/Blocks
+    - file: Planet-formation/Collision/Main_en_Collision
+      sections:
+      - file: Planet-formation/Collision/Migration
+      - file: Planet-formation/Collision/Collision
+      - file: Planet-formation/Collision/Growth
+      - file: Planet-formation/Collision/Dynamics
+      - file: Planet-formation/Collision/GeoChem
+    - file: Planet-formation/HGW/Main_en_HGW
+      sections:
+      - file: Planet-formation/HGW/Amorphous
+      - file: Planet-formation/HGW/HGW
+      - file: Planet-formation/HGW/Vitrification
+      - file: Planet-formation/HGW/Cooling
+    - file: Planet-formation/Levitation/Main_en_Levitation
+      sections:
+      - file: Planet-formation/Levitation/3DObs
+      - file: Planet-formation/Levitation/RightWing
+      - file: Planet-formation/Levitation/Levitation
+  - caption: Appendix
+    chapters:    
+    - file: to-include
+    - file: bibliography

@@ -1,0 +1,1255 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protoplanetary Disks &#8212; Background</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/assets/GC/GC6-08-2022_fichiers/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/assets/Specific_pages/Business-canvas/style_business_canvas.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/coffee_cup.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/Cube.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CV_1.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/kittons.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/pomodoro-style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style_book_shell.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style_flipping_card.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style_wheel.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/custom_style-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/kittons-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/pomodoro-style-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/style_business_canvas-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/style_flipping_card-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/style_wheel-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/wheel_style-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "https://github.com/Deugz/jb-background");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script src="../../_static/assets/script/kittons.js"></script>
+    <script src="../../_static/assets/script/Pomodoro-script.js"></script>
+    <script src="../../_static/assets/script/scriptvideo.js"></script>
+    <script src="../../_static/assets/script/script_flipping_card.js"></script>
+    <script src="../../_static/assets/script/script_wheel.js"></script>
+    <script src="../../_static/assets/script/slideshow.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/kittons-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/Pomodoro-script-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/scriptvideo-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/script_blob-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/script_flipping_card-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/slideshow-checkpoint.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Planet-formation/Planet_formation/PPD';</script>
+    <link rel="canonical" href="https://deugz.github.io/jb-background/_build/html/Planet-formation/Planet_formation/PPD.html" />
+    <link rel="shortcut icon" href="../../_static/logo_SFTP.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Planets Building Blocks" href="Blocks.html" />
+    <link rel="prev" title="Star Formation" href="Star_formation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo_SFTP.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo_SFTP.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io/Encyclopedia-Home/build/html/index.html" title="Home" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-house"></i></span>
+            <label class="sr-only">Home</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io/nb-profile/_build/html/intro.html" title="Profile" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-user"></i></span>
+            <label class="sr-only">Profile</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io/ab-blog/_website/index.html" title="Blog" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-blog"></i></span>
+            <label class="sr-only">Blog</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io/nb-tools/_build/html/intro.html" title="Tools" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-screwdriver-wrench"></i></span>
+            <label class="sr-only">Tools</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io" title="Forum" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-comments"></i></span>
+            <label class="sr-only">Forum</label></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Planet Formation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Science.html">Overview</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Main_en_Planet_formation.html">Stars &amp; Planet Formation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Prequel.html">Setting up the stage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Star_formation.html">Star Formation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Protoplanetary Disks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Blocks.html">Planets Building Blocks</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Collision/Main_en_Collision.html">Dust Collisions &amp; Growth</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Collision/Migration.html">Migration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Collision/Collision.html">Collision &amp; Growth Mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Collision/Growth.html">Growth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Collision/Dynamics.html">Planetesimals Dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Collision/GeoChem.html">Geochemistry</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../HGW/Main_en_HGW.html">Hyperquenched Glassy Water</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../HGW/Amorphous.html">Amorphous Ices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HGW/HGW.html">HGW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HGW/Vitrification.html">Vitrification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HGW/Cooling.html">Cooling Processes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Levitation/Main_en_Levitation.html">Levitation and IR Signature</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Levitation/3DObs.html">Dust 3D Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Levitation/RightWing.html">3 µm Right Wing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Levitation/Levitation.html">Levitation techniques</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../to-include.html">To include</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Planet-formation/Planet_formation/PPD.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Protoplanetary Disks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-definition-u-strong"><strong>‣  <u> Definition </u></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-discovery-and-early-history-u-strong"><strong>‣  <u> Discovery and Early History  </u></strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-direct-imaging-strong"><strong>‣ ‣  Direct Imaging </strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-the-first-strong"><strong>‣ ‣ ‣  The First </strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-the-famous-strong"><strong>‣ ‣ ‣  The Famous </strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-structure-strong"><strong> Structure </strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vertical-structure">Vertical structure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-constituents-strong"><strong> Constituents </strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#volatiles">Volatiles</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-observation-techniques-strong"><strong> Observation techniques </strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-rim">Inner Rim</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#midplane">Midplane</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">Properties</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physics-of-ppds">Physics of PPDs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dust-dynamics">Dust Dynamics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-mass-strong"><strong> ‣ ‣ Mass</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#vertical">Vertical</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-disk-component-orbital-velocity-strong">‣ ‣ ‣ <strong> Disk component orbital velocity </strong></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-snowline-strong"><strong> ‣ ‣ Snowline</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ices-in-ppd">Ices in PPD</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#observation">Observation</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#where-is-the-snow-line">Where is the snow-line</a></li>
+</ul>
+</li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#models">Models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-snowline-in-planet-formation">Importance of snowline in Planet formation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-o-ratio">C/O ratio</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#water-vapor-in-ppd">Water Vapor in PPD</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#co-snowline">CO snowline</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substructures">Substructures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alma">ALMA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debris-disk">Debris Disk</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planet-formation-scenario">Planet formation scenario</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-accretion-scenario">Core accretion scenario</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry-in-disks">Chemistry in Disks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#molecule-detections">Molecule detections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assymetric-traps">Assymetric traps</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="protoplanetary-disks">
+<h1>Protoplanetary Disks<a class="headerlink" href="#protoplanetary-disks" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
+<h3> <strong> <u>  Introduction </u></strong> </h3>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-7 sd-col-xs-7 sd-col-sm-7 sd-col-md-7 sd-col-lg-7 docutils">
+Intro paragraph</div>
+<div class="sd-col sd-d-flex-column sd-col-5 sd-col-xs-5 sd-col-sm-5 sd-col-md-5 sd-col-lg-5 docutils">
+<p><strong>Plan</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="Star_formation.html#content-references-title1"><span class="std std-ref"><strong>Overview</strong></span></a><ul>
+<li>Definition</li>
+<li>Discovery and Early History</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul class="simple">
+<li><a class="reference internal" href="Prequel.html#content-references-title2"><span class="std std-ref"><strong>Properties</strong></span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="margin sidebar">
+<p class="first sidebar-title"></p>
+<div class="sd-col sd-d-flex-row last docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text"><strong>Page</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text first">Status: <img alt="flag alt &gt;" src="Docs/Svg_icons/Under_construction.svg" /></p>
+</li>
+<li><p class="sd-card-text first">Reviewed: ❌</p>
+</li>
+<li><p class="sd-card-text first">Updated: 04/02/2023</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text"><strong>Notes</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<div class="note dropdown admonition">
+<p class="first admonition-title">To Do</p>
+<ul class="last simple">
+<li><p class="sd-card-text first">Think about coherent plan</p>
+</li>
+<li><p class="sd-card-text first">Implement</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="tip dropdown admonition">
+<p class="first admonition-title">Colaboration</p>
+<p class="sd-card-text last">Star formation is not my expertise so if you want to help, feel free to comment the contribution you could make</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="overview">
+<span id="content-references-title1"></span><h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<div class="section" id="strong-u-definition-u-strong">
+<h3><strong>‣  <u> Definition </u></strong><a class="headerlink" href="#strong-u-definition-u-strong" title="Permalink to this heading">#</a></h3>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<p class="emphase">A protoplanetary disk is a rotating disk of gas and dust surrounding a newly formed star, from which planets and other celestial objects eventually form.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>How did we get there</strong></p>
+<ul class="last simple">
+<li>Class 2</li>
+<li>Explain rotation of gas and -&gt; Disk.</li>
+<li>Gas:Dust ratio 99:1</li>
+</ul>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="figure align-default" id="ppd-nasa-image-artist">
+<a class="reference internal image-reference" href="../../_images/PPD_Nasa_artist.jpg"><img alt="../../_images/PPD_Nasa_artist.jpg" src="../../_images/PPD_Nasa_artist.jpg" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">PPD (Artist image) <a class="reference external" href="https://www.spitzer.caltech.edu/image/ssc2005-06b-mini-solar-system-in-the-making" rel="noopener noreferrer" target="_blank">source</a></span><a class="headerlink" href="#ppd-nasa-image-artist" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="strong-u-discovery-and-early-history-u-strong">
+<h3><strong>‣  <u> Discovery and Early History  </u></strong><a class="headerlink" href="#strong-u-discovery-and-early-history-u-strong" title="Permalink to this heading">#</a></h3>
+<p>Infrared excess around young stars</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>used to be named <strong>Proplyd</strong></li>
+</ul>
+</div>
+<div class="section" id="strong-direct-imaging-strong">
+<h4><strong>‣ ‣  Direct Imaging </strong><a class="headerlink" href="#strong-direct-imaging-strong" title="Permalink to this heading">#</a></h4>
+<div class="section" id="strong-the-first-strong">
+<h5><strong>‣ ‣ ‣  The First </strong><a class="headerlink" href="#strong-the-first-strong" title="Permalink to this heading">#</a></h5>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<p>Directly imaged by Hubble in 1992.
+<span id="id1">[<a class="reference internal" href="../../bibliography.html#id153" title="C. R. O'dell, Zheng Wen, and Xihai Hu. Discovery of new objects in the orion nebula on hst images: shocks, compact sources, and protoplanetary disks. The Astrophysical Journal, 1993.">O'dell <em>et al.</em>, 1993</a>]</span></p>
+<div class="admonition-cool-fact admonition">
+<p class="first admonition-title">Cool fact </p>
+<p>Beneficiated from the refurbishment of Hubble in 1993</p>
+<ul class="last simple">
+<li>Check <a class="reference external" href="https://www.nasa.gov/mission_pages/hubble/servicing/index.html" rel="noopener noreferrer" target="_blank">link</a></li>
+</ul>
+</div>
+<p><span id="id2">[<a class="reference internal" href="../../bibliography.html#id151" title="C. R O'dell and Zheng A Wen. Postrefurbishment mission hubble space telescope images of the core of the orion nebula: proplyds, herbig-haro objects, and measurements of a circumstellar disk. The Astrophysical Journal, 1994.">O'dell and Wen, 1994</a>]</span></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="figure align-default" id="ppd-first-image">
+<a class="reference internal image-reference" href="../../_images/PPD_Odell_1.jpg"><img alt="../../_images/PPD_Odell_1.jpg" src="../../_images/PPD_Odell_1.jpg" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">PPD <a class="reference external" href="https://hubblesite.org/contents/media/images/1994/24/164-Image.html?news=true" rel="noopener noreferrer" target="_blank">source</a></span><a class="headerlink" href="#ppd-first-image" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="strong-the-famous-strong">
+<h5><strong>‣ ‣ ‣  The Famous </strong><a class="headerlink" href="#strong-the-famous-strong" title="Permalink to this heading">#</a></h5>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">HL Tau</p>
+</div>
+<p>substructure -&gt; structure</p>
+</div>
+</div>
+</div>
+<div class="section" id="strong-structure-strong">
+<h3><strong> Structure </strong><a class="headerlink" href="#strong-structure-strong" title="Permalink to this heading">#</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Insert here the most simple diagram from Birnstiel + Observations</p>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id3">[<a class="reference internal" href="../../bibliography.html#id16" title="K R Bell, P M Cassen, H H Klahr, and Th Henning. The structure and appearance of protostellar accretion disks : limits on disk flaring. THE ASTROPHYSICAL JOURNAL, 486:372-387, 1997.">Bell <em>et al.</em>, 1997</a>]</span>: Vertical structure models of protostellar α-law accretion disks: temperature dependence of opacity is crucial factor determining radial trends, most planet formation (0.5 – 3 M1 disks) occurred in environments unheated by stellar radiation, external heating enhances flaring, but inner disk will shield planet-forming regions in most cases.</li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="vertical-structure">
+<h4>Vertical structure<a class="headerlink" href="#vertical-structure" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li>from CO isotoplogue emission: <a class="reference external" href="https://iopscience.iop.org/article/10.3847/1538-4357/acb3c4/pdf" rel="noopener noreferrer" target="_blank">Article</a></li>
+</ul>
+</div>
+<div class="section" id="strong-constituents-strong">
+<h4><strong> Constituents </strong><a class="headerlink" href="#strong-constituents-strong" title="Permalink to this heading">#</a></h4>
+<div class="figure align-default" id="ppd-constit">
+<a class="reference internal image-reference" href="../../_images/Dullemond-2006.png"><img alt="../../_images/Dullemond-2006.png" src="../../_images/Dullemond-2006.png" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text"><span class="xref myst">Reference</span> - Dullemond 2006 to find</span><a class="headerlink" href="#ppd-constit" title="Permalink to this image">#</a></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Split in 2 and modify in inkscape with relevant information</p>
+</div>
+<div class="section" id="volatiles">
+<h5>Volatiles<a class="headerlink" href="#volatiles" title="Permalink to this heading">#</a></h5>
+<ul class="simple">
+<li><span id="id4">[<a class="reference internal" href="../../bibliography.html#id135" title="A. Schneeberger, O. Mousis, A. Aguichine, and J. I Lunine. Evolution of the reservoirs of volatiles in the protosolar nebula. Astronomy &amp; Astrophysics, 2 2023. doi:10.1051/0004-6361/202244670.">Schneeberger <em>et al.</em>, 2023</a>]</span></li>
+</ul>
+</div>
+</div>
+<div class="section" id="strong-observation-techniques-strong">
+<h4><strong> Observation techniques </strong><a class="headerlink" href="#strong-observation-techniques-strong" title="Permalink to this heading">#</a></h4>
+<p>Different techniques will probe different parts, objects of the disk …</p>
+<ul class="simple">
+<li>link with SED</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Insert PPD Diagram with different zone / observations techniques</li>
+<li>Split in 3 with respect to different techniques and show pictures</li>
+</ul>
+</div>
+</div>
+<div class="section" id="inner-rim">
+<h4>Inner Rim<a class="headerlink" href="#inner-rim" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><strong>Review</strong>: <span id="id5">[<a class="reference internal" href="../../bibliography.html#id140" title="C. P. Dullemond and J. D. Monnier. The inner regions of protoplanetary disks. Annual Review of Astronomy and Astrophysics, 48:205-239, 9 2010. doi:10.1146/annurev-astro-081309-130932.">Dullemond and Monnier, 2010</a>]</span></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Good diagram to show Observation per zone … <strong>to extract</strong></p>
+</div>
+</div>
+<div class="section" id="midplane">
+<h4>Midplane<a class="headerlink" href="#midplane" title="Permalink to this heading">#</a></h4>
+<p>!!</p>
+</div>
+</div>
+</div>
+<div class="section" id="properties">
+<span id="content-references-title2"></span><h2>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">#</a></h2>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<p class="emphase">Protoplanetary disks are a beautifull playground for modellers to play.</p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="figure align-default" id="ppd-model-obs">
+<a class="reference internal image-reference" href="../../_images/PPD_Model_Obs.jpg"><img alt="../../_images/PPD_Model_Obs.jpg" src="../../_images/PPD_Model_Obs.jpg" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text"><a class="reference external" href="https://hubblesite.org/contents/media/images/2015/40/3651-Image.html?itemsPerPage=100&amp;page=8&amp;filterUUID=5a370ecc-f605-44dd-8096-125e4e623945" rel="noopener noreferrer" target="_blank">Reference</a></span><a class="headerlink" href="#ppd-model-obs" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="physics-of-ppds">
+<h3>Physics of PPDs<a class="headerlink" href="#physics-of-ppds" title="Permalink to this heading">#</a></h3>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<p>Figure X is a protoplanetary disk schematic highlighting some of the key disc mechanisms and the physics that is required to be modeled to understand them (in parentheses and defined below):</p>
+<ul class="simple">
+<li><strong>HD</strong>: <span class="hovertext" data-hover="Definition">Hydrodynamics</span></li>
+</ul>
+<br>
+<ul class="simple">
+<li><strong>MHD</strong>: <span class="hovertext" data-hover="Definition">Magnetohydrodynamics</span></li>
+</ul>
+<br>
+<ul class="simple">
+<li><strong>RHD</strong>: <span class="hovertext" data-hover="Definition">Radiationhydrodynamics</span></li>
+</ul>
+<br>
+<ul class="simple">
+<li><strong>RT</strong>: <span class="hovertext" data-hover="Definition">Radiative transfer</span></li>
+</ul>
+<br>
+<ul class="simple">
+<li><strong>CHEM</strong>: <span class="hovertext" data-hover="Definition">Chemistry</span></li>
+</ul>
+<br>
+<ul class="simple">
+<li><strong>DD</strong>: <span class="hovertext" data-hover="Definition">Dust dynamics</span></li>
+</ul>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="figure align-default" id="ppd-models">
+<a class="reference internal image-reference" href="../../_images/ModelPP.png"><img alt="../../_images/ModelPP.png" src="../../_images/ModelPP.png" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text"><span class="xref myst">Reference</span></span><a class="headerlink" href="#ppd-models" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Most of the Physics presented above is out of the scope of my work and we will now focus on the Dust Dynamics, and more ?</p>
+<div class="section" id="dust-dynamics">
+<h4>Dust Dynamics<a class="headerlink" href="#dust-dynamics" title="Permalink to this heading">#</a></h4>
+<p>PPD Diagrams comes from Til Birnstiel website - <a class="reference external" href="https://www.til-birnstiel.de/#stacks_in_395_page1_myModal" rel="noopener noreferrer" target="_blank">source</a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Where are we located in time</li>
+<li>diagram<ul>
+<li>Temperature gradient, snowline</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<p>Different part of SED probes different regions of a PPD</p>
+<ul class="simple">
+<li>How to image the midplane ?</li>
+</ul>
+<p>Evolution of PPD is dominated by:</p>
+<ul class="simple">
+<li>Ongoing <code class="docutils literal notranslate"><span class="pre">accretion</span></code> of material onto the star</li>
+<li><code class="docutils literal notranslate"><span class="pre">photoevaporation</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">dust</span> <span class="pre">agglomeration</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">dynamical</span> <span class="pre">interaction</span></code> with stellar or galactic environment</li>
+</ul>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="figure align-default" id="ppd-sed">
+<a class="reference internal image-reference" href="../../_images/disk_sed.png"><img alt="../../_images/disk_sed.png" src="../../_images/disk_sed.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Interstellar Dust</span><a class="headerlink" href="#ppd-sed" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="../../_images/ppd-disk-instr-symmetric2.svg"><img alt="../../_images/ppd-disk-instr-symmetric2.svg" src="../../_images/ppd-disk-instr-symmetric2.svg" width="1200px" /></a>
+<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Interstellar Dust</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</div>
+</div>
+<div class="section" id="strong-mass-strong">
+<h4><strong> ‣ ‣ Mass</strong><a class="headerlink" href="#strong-mass-strong" title="Permalink to this heading">#</a></h4>
+<p>PPD mass can be constrained by <strong>ALMA measurments</strong> using different methods</p>
+<p><strong>Example</strong>:</p>
+<ul class="simple">
+<li>Mass of solids in mm-sized dust grain can be estimated from the <code class="docutils literal notranslate"><span class="pre">mm</span> <span class="pre">flux</span> <span class="pre">density</span></code> combined with <strong>assumptions</strong> about <code class="docutils literal notranslate"><span class="pre">optical</span> <span class="pre">depth</span></code>, <code class="docutils literal notranslate"><span class="pre">dust</span> <span class="pre">opacity</span></code> and <code class="docutils literal notranslate"><span class="pre">disk</span> <span class="pre">temperature</span></code> (cf ref <code class="docutils literal notranslate"><span class="pre">12-17</span></code>).</li>
+<li>Other methods uses the amplitude and wavelength of the <code class="docutils literal notranslate"><span class="pre">gravitational</span> <span class="pre">instability</span> <span class="pre">wiggle</span></code> (<code class="docutils literal notranslate"><span class="pre">ref</span> <span class="pre">18</span></code> - <strong>?</strong>)</li>
+</ul>
+<p>the mass of PPDs is dominated by gasses (H<sub>2</sub> and He)</p>
+<ul class="simple">
+<li>dust to gas ratio is typically 1:100 - to check for ref</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id7">[<a class="reference internal" href="../../bibliography.html#id18">Desch, 2007</a>]</span>: Disk model for Solar System, assume compact disk that is photoevaporated, solves problem that “minimum-mass” (assuming that giant planets swept up all material in their feeding zones) disk models have: Uranus and Neptune could not have grown to current size within lifetime of disk. This models derives planet masses within 10 % of actual masses, but only if Uranus and Neptune switched placed in early Solar System (also predicted by Nice model).</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="structure">
+<h4>Structure<a class="headerlink" href="#structure" title="Permalink to this heading">#</a></h4>
+<div class="section" id="vertical">
+<h5>Vertical<a class="headerlink" href="#vertical" title="Permalink to this heading">#</a></h5>
+<ul class="simple">
+<li><span id="id8">[<a class="reference internal" href="../../bibliography.html#id148" title="T Paneque-Carreño, A. Miotello, E.F. van Dishoeck, B. Tabone, A. Izquierdo, and S. Facchini. Directly tracing the vertical stratification of molecules in protoplanetary disks. Astronomy &amp; Astrophysics, 1 2022. doi:10.1051/0004-6361/202244428.">Paneque-Carreño <em>et al.</em>, 2022</a>]</span></li>
+</ul>
+</div>
+<div class="section" id="strong-disk-component-orbital-velocity-strong">
+<h5>‣ ‣ ‣ <strong> Disk component orbital velocity </strong><a class="headerlink" href="#strong-disk-component-orbital-velocity-strong" title="Permalink to this heading">#</a></h5>
+<p>Orbital gas velocity in PPDs is reduced below the <code class="docutils literal notranslate"><span class="pre">Keplerian</span> <span class="pre">speed</span></code> because the negative radial <code class="docutils literal notranslate"><span class="pre">gas-pressure</span></code> gradient (pushing outwards) counteracts the <code class="docutils literal notranslate"><span class="pre">gravitational</span> <span class="pre">pull</span></code> of the stars.
+Solid materials are not pressure supported and as a result, dust particles should orbit the stars at Keplerian velocity but because they experience a <code class="docutils literal notranslate"><span class="pre">headwind</span></code> from the slower-rotating gas, a <code class="docutils literal notranslate"><span class="pre">drag</span> <span class="pre">force</span></code> acts on the particles, slowing them down.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Epstein</span> <span class="pre">drag</span> <span class="pre">law</span></code> for particles that are <strong>smaller</strong> than the <code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">free</span> <span class="pre">path</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">gas</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Stokes</span> <span class="pre">drag</span> <span class="pre">law</span></code> for particles <strong>bigger</strong> than the <code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">free</span> <span class="pre">path</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">gas</span></code></li>
+</ul>
+<p>Different <code class="docutils literal notranslate"><span class="pre">flow</span> <span class="pre">regimes</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>What is meant by the <strong>mean free path of the gas</strong></p>
+<p class="last"><a class="reference external" href="https://en.wikipedia.org/wiki/Mean_free_path" rel="noopener noreferrer" target="_blank">Wikipedia</a></p>
+</div>
+<p>The gas drag acting on dust particles is best described by the <strong><code class="docutils literal notranslate"><span class="pre">stopping</span> <span class="pre">time</span></code></strong>:</p>
+<div class="margin sidebar">
+<p class="first sidebar-title"></p>
+<div class="figure align-default" id="experiment">
+<a class="reference internal image-reference" href="../../_images/Stoping_time.svg"><img alt="../../_images/Stoping_time.svg" src="../../_images/Stoping_time.svg" width="200px" /></a>
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">(a) correspond to Epstein regime, (b) Stokes regime</span><a class="headerlink" href="#experiment" title="Permalink to this image">#</a></p>
+</div>
+<ul class="last simple">
+<li>R particle radius</li>
+<li>pp particle density</li>
+<li>pg gas density</li>
+<li>Cs gas sound speed</li>
+<li>λ mean free path</li>
+</ul>
+</div>
+<p>A common measure of particle sizes in protoplanetary disks is the <code class="docutils literal notranslate"><span class="pre">Stokes</span> <span class="pre">number</span></code>, defined as:</p>
+<div class="margin sidebar">
+<p class="first sidebar-title"></p>
+<div class="last figure align-default" id="id9">
+<a class="reference internal image-reference" href="../../_images/Stokes_number.svg"><img alt="../../_images/Stokes_number.svg" src="../../_images/Stokes_number.svg" width="200px" /></a>
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Omega is Keplerian frequency (?)</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+</div>
+</div>
+<p>Particles with the same Stokes number behave aerodynamically similar. For a fixed value of the mass density of the dust particle, the Stokes number represent the <strong>particle size</strong>. Hence, particles of different sizes obtain different speeds at the same <code class="docutils literal notranslate"><span class="pre">heliocentric</span> <span class="pre">distances</span></code>, leading to different <code class="docutils literal notranslate"><span class="pre">relative</span> <span class="pre">velocities</span></code> among the solid particles population and hence different collision speeds.</p>
+</div>
+</div>
+<div class="section" id="strong-snowline-strong">
+<h4><strong> ‣ ‣ Snowline</strong><a class="headerlink" href="#strong-snowline-strong" title="Permalink to this heading">#</a></h4>
+<div class="section" id="ices-in-ppd">
+<h5>Ices in PPD<a class="headerlink" href="#ices-in-ppd" title="Permalink to this heading">#</a></h5>
+<ul class="simple">
+<li><a class="reference external" href="https://arxiv.org/pdf/2305.02355.pdf" rel="noopener noreferrer" target="_blank">Arxiv May 2023</a>: Investigate Edge-on Disks ice inventory</li>
+</ul>
+</div>
+<div class="section" id="observation">
+<h5>Observation<a class="headerlink" href="#observation" title="Permalink to this heading">#</a></h5>
+<ul class="simple">
+<li><span id="id10">[<a class="reference internal" href="../../bibliography.html#id126" title="A. A. Schegerer and S. Wolf. Spatially resolved detection of crystallized water ice in a t tauri object. Astronomy and Astrophysics, 517:A87, 7 2010. doi:10.1051/0004-6361/200911849.">Schegerer and Wolf, 2010</a>]</span>: spectroscopic detection of crystalline water ice in young stellar object, predominantly small grains (0.1 – 0.3 μm), few large grains, evidence for grain growth, crystallinity increases in upper layers of circumstellar disk, only amorphous grains exist in bipolar envelope, crystallization close to disk atmosphere, where water ice is shielded from hard radiation</li>
+</ul>
+<hr class="docutils" />
+<p><strong>Mekler and Podolak Model</strong>:</p>
+<ul class="simple">
+<li><span id="id11">[<a class="reference internal" href="../../bibliography.html#id187" title="Y Mekler and M Podolak. Formation of amorphous ice in the protoplanetary nebula. Planetary and Space Science, 1994.">Mekler and Podolak, 1994</a>]</span></li>
+<li><span id="id12">[<a class="reference internal" href="../../bibliography.html#id186" title="M Podolak and Y Mekler. Dirty ice grains in the protoplanetary nebula. Planet. Space Sri, 45:1401-1406, 1997.">Podolak and Mekler, 1997</a>]</span></li>
+</ul>
+<p>Crystaline / Amorphous</p>
+<p>How much of the primordial ices is concerved during class 0/1 phase</p>
+<div class="section" id="where-is-the-snow-line">
+<h6>Where is the snow-line<a class="headerlink" href="#where-is-the-snow-line" title="Permalink to this heading">#</a></h6>
+<p>For water ice, the critical condensation temperature is between 145K (ref 24) and 170K (ref 25) dependant on the <strong>assumed local pressure</strong></p>
+<p>However, snow-line location of different ice species can vary due to several processes in the disk (<code class="docutils literal notranslate"><span class="pre">ref</span> <span class="pre">26</span> <span class="pre">-</span> <span class="pre">28</span></code>)</p>
+<ul class="simple">
+<li><span id="id13">[<a class="reference internal" href="../../bibliography.html#id171" title="Lucas A. Cieza, Simon Casassus, John Tobin, Steven P. Bos, Jonathan P. Williams, Sebastian Perez, Zhaohuan Zhu, Claudio Caceres, Hector Canovas, Michael M. Dunham, Antonio Hales, Jose L. Prieto, David A. Principe, Matthias R. Schreiber, Dary Ruiz-Rodriguez, and Alice Zurlo. Imaging the water snow-line during a protostellar outburst. Nature, 535:258-261, 7 2016. doi:10.1038/nature18612.">Cieza <em>et al.</em>, 2016</a>]</span></li>
+</ul>
+<p><strong>Variation from Gaps</strong>: <a class="reference external" href="https://academic.oup.com/mnras/article-abstract/522/3/3378/7134090?redirectedFrom=fulltext&amp;login=false" rel="noopener noreferrer" target="_blank">Article</a> to extract and put in bib</p>
+</div>
+</div>
+<div class="section" id="models">
+<h5>Models<a class="headerlink" href="#models" title="Permalink to this heading">#</a></h5>
+<ul class="simple">
+<li><span id="id14">[<a class="reference internal" href="../../bibliography.html#id84">Min <em>et al.</em>, 2010</a>]</span>: modeling H2O snowline in young solar nebula (optically thick), two opposite effects (shielding/viscous heating), snowline position sensitive to dust grain opacity/mass accretion rate of disk, compute abundances of ice/dust, jump in solid surface density at snowline (and where rocky planets formed) smaller than previously assumed</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="importance-of-snowline-in-planet-formation">
+<h3>Importance of snowline in Planet formation<a class="headerlink" href="#importance-of-snowline-in-planet-formation" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><span id="id15">[<a class="reference internal" href="../../bibliography.html#id170" title="Ke Zhang, Geoffrey A. Blake, and Edwin A. Bergin. Evidence of fast pebble growth near condensation fronts in the hl tau protoplanetary disk. Astrophysical Journal Letters, 6 2015. doi:10.1088/2041-8205/806/1/L7.">Zhang <em>et al.</em>, 2015</a>]</span></li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>important for Ross, ie annular substructure can be the result of grain growth
+ie dip appear because no more small grain, replaced by bigger grains -&gt; PPD are not homogeneous</li>
+</ul>
+</div>
+<ul class="simple">
+<li><span id="id16">[<a class="reference internal" href="../../bibliography.html#id168" title="Satoshi Okuzumi, Hidekazu Tanaka, Hiroshi Kobayashi, and Koji Wada. Rapid coagulation of porous dust aggregates outside the snow line: a pathway to successful icy planetesimal formation. Astrophysical Journal, 6 2012. doi:10.1088/0004-637X/752/2/106.">Okuzumi <em>et al.</em>, 2012</a>]</span></li>
+</ul>
+<div class="section" id="c-o-ratio">
+<h4>C/O ratio<a class="headerlink" href="#c-o-ratio" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id17">[<a class="reference internal" href="../../bibliography.html#id22" title="Karin I. Öberg, Ruth Murray-Clay, and Edwin A. Bergin. The effects of snowlines on c/o in planetary atmospheres. Astrophysical Journal Letters, 12 2011. doi:10.1088/2041-8205/743/1/L16.">Öberg <em>et al.</em>, 2011</a>]</span>: C/O ratio regulates chemistry in hot Jupiters, exoplanets show different C/O ratio from solar system, ratio depends on where w.r.t. the different snow lines the giant planets form, between H2O and CO snowline, most of O is present in icy grains.</li>
+</ul>
+</div>
+<div class="section" id="water-vapor-in-ppd">
+<h4>Water Vapor in PPD<a class="headerlink" href="#water-vapor-in-ppd" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id18">[<a class="reference internal" href="../../bibliography.html#id130" title="L. Podio, I. Kamp, C. Codella, S. Cabrit, B. Nisini, C. Dougados, G. Sandell, J. P. Williams, L. Testi, W. F. Thi, P. Woitke, R. Meijerink, M. Spaans, G. Aresu, F. Ménard, and C. Pinte. Water vapor in the protoplanetary disk of dg tau. Astrophysical Journal Letters, 3 2013. doi:10.1088/2041-8205/766/1/L5.">Podio <em>et al.</em>, 2013</a>]</span>: water vapour detected in outer disk, where most water ice reservoirs are stored, Herschel observations, dominated by emission from envelope/outflow, strong UV radiation of parent star irradiates upper disk layer (heating to ≈ 600 K), suggest water delivery to terrestrial planets by impact of icy bodies forming in outer disk</li>
+<li><span id="id19">[<a class="reference internal" href="../../bibliography.html#id150" title="Andrea Banzatti, Klaus M. Pontoppidan, José Pérez Chávez, Colette Salyk, Lindsey Diehl, Simon Bruderer, Gregory J. Herczeg, Andres Carmona, Ilaria Pascucci, Sean Brittain, Stanley Jensen, Sierra Grant, Ewine F. van Dishoeck, Inga Kamp, Arthur D. Bosman, Karin I. Öberg, Geoff A. Blake, Michael R. Meyer, Eric Gaidos, Adwin Boogert, John T. Rayner, and Caleb Wheeler. The kinematics and excitation of infrared water vapor emission from planet-forming disks: results from spectrally resolved surveys and guidelines for jwst spectra. The Astronomical Journal, 165:72, 2 2023. URL: https://iopscience.iop.org/article/10.3847/1538-3881/aca80b, doi:10.3847/1538-3881/aca80b.">Banzatti <em>et al.</em>, 2023</a>]</span></li>
+</ul>
+</div>
+<div class="section" id="co-snowline">
+<h4>CO snowline<a class="headerlink" href="#co-snowline" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id20">[<a class="reference internal" href="../../bibliography.html#id23">Qi <em>et al.</em>, 2013</a>]</span>: chemical imaging of CO snowline (TW Hya, solar nebula analogue) with ALMA, observe N2H+, distribution in ring matches predicted position (30 AU) of CO snow line, helps to assess models of solar system</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="substructures">
+<h2>Substructures<a class="headerlink" href="#substructures" title="Permalink to this heading">#</a></h2>
+<div class="margin sidebar">
+<p class="first sidebar-title"></p>
+<a class="reference internal image-reference" href="../../_images/Andrews-et-al-Animation.gif"><img alt="PPD-Gif" class="align-center" src="../../_images/Andrews-et-al-Animation.gif" style="width: 600px;" /></a>
+<p class="last"><a class="reference external" href="https://almascience.eso.org/almadata/lp/DSHARP/" rel="noopener noreferrer" target="_blank">Papers + Data</a></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Implement the following in dropdown tab<ul>
+<li>Find paper</li>
+</ul>
+</li>
+<li>Insert DSHARP Gif here</li>
+<li>add tip bar with DSHARP project (articles)</li>
+</ul>
+</div>
+<div class="section" id="alma">
+<h3>ALMA<a class="headerlink" href="#alma" title="Permalink to this heading">#</a></h3>
+<p>sub mm / substructure are ubiquitous -&gt; planet formation is common</p>
+<div class="figure align-default" id="tw-hy-gap-explain">
+<a class="reference internal image-reference" href="../../_images/Tw_Hy_gap_explain.png"><img alt="../../_images/Tw_Hy_gap_explain.png" src="../../_images/Tw_Hy_gap_explain.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text"><a class="reference external" href="https://hubblesite.org/contents/media/images/2017/03/3972-Image.html?itemsPerPage=100&amp;page=6&amp;filterUUID=5a370ecc-f605-44dd-8096-125e4e623945" rel="noopener noreferrer" target="_blank">Reference</a></span><a class="headerlink" href="#tw-hy-gap-explain" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-default" id="disk-gaps-hubble">
+<a class="reference internal image-reference" href="../../_images/Disk_gaps_hubble.png"><img alt="../../_images/Disk_gaps_hubble.png" src="../../_images/Disk_gaps_hubble.png" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text"><a class="reference external" href="https://hubblesite.org/contents/media/images/2017/03/3975-Image.html?itemsPerPage=100&amp;page=6&amp;filterUUID=5a370ecc-f605-44dd-8096-125e4e623945" rel="noopener noreferrer" target="_blank">Reference</a></span><a class="headerlink" href="#disk-gaps-hubble" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="debris-disk">
+<h2>Debris Disk<a class="headerlink" href="#debris-disk" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><strong>Review</strong>: <span id="id21">[<a class="reference internal" href="../../bibliography.html#id139" title="A Meredith Hughes, Gaspard Duchêne, and Brenda C Matthews. Debris disks: structure, composition, and variability. Annual Review of Astronomy and Astrophysics, 2018. URL: https://doi.org/10.1146/annurev-astro-081817-, doi:10.1146/annurev-astro-081817.">Hughes <em>et al.</em>, 2018</a>]</span></li>
+</ul>
+<div class="section" id="observations">
+<h3>Observations<a class="headerlink" href="#observations" title="Permalink to this heading">#</a></h3>
+<p><strong>JWST</strong>: <span id="id22">[<a class="reference internal" href="../../bibliography.html#id2" title="András Gáspár, Schuyler Grace Wolff, George H. Rieke, Jarron M. Leisenring, Jane Morrison, Kate Y. L. Su, Kimberly Ward-Duong, Jonathan Aguilar, Marie Ygouf, Charles Beichman, Jorge Llop-Sayson, and Geoffrey Bryden. Spatially resolved imaging of the inner fomalhaut disk using jwst/miri. Nature Astronomy, 5 2023. URL: https://www.nature.com/articles/s41550-023-01962-6, doi:10.1038/s41550-023-01962-6.">Gáspár <em>et al.</em>, 2023</a>]</span></p>
+</div>
+</div>
+<div class="section" id="planet-formation-scenario">
+<h2>Planet formation scenario<a class="headerlink" href="#planet-formation-scenario" title="Permalink to this heading">#</a></h2>
+<div class="section" id="core-accretion-scenario">
+<h3>Core accretion scenario<a class="headerlink" href="#core-accretion-scenario" title="Permalink to this heading">#</a></h3>
+<p><span id="id23">[<a class="reference internal" href="../../bibliography.html#id154">Eistrup, 2022</a>]</span></p>
+</div>
+</div>
+<div class="section" id="chemistry-in-disks">
+<h2>Chemistry in Disks<a class="headerlink" href="#chemistry-in-disks" title="Permalink to this heading">#</a></h2>
+<div class="section" id="molecule-detections">
+<h3>Molecule detections<a class="headerlink" href="#molecule-detections" title="Permalink to this heading">#</a></h3>
+<p><strong>JWST</strong> (MIRI instrument)</p>
+<ul class="simple">
+<li><span id="id24">[<a class="reference internal" href="../../bibliography.html#id5">Grant <em>et al.</em>, 2022</a>]</span></li>
+</ul>
+</div>
+<div class="section" id="assymetric-traps">
+<h3>Assymetric traps<a class="headerlink" href="#assymetric-traps" title="Permalink to this heading">#</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To define</p>
+</div>
+<ul class="simple">
+<li><span id="id25">[<a class="reference internal" href="../../bibliography.html#id8">Temmink <em>et al.</em>, 2023</a>]</span></li>
+<li><span id="id26">[<a class="reference internal" href="../../bibliography.html#id7" title="Alice S. Booth, Nienke Van Der Marel, Margot Leemker, Ewine F. Van Dishoeck, and Satoshi Ohashi. A major asymmetric ice trap in a planet-forming disk: ii. prominent so and so2pointing to c/o &lt; 1. Astronomy and Astrophysics, 7 2021. doi:10.1051/0004-6361/202141057.">Booth <em>et al.</em>, 2021</a>]</span></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Planet-formation\Planet_formation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Star_formation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Star Formation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Blocks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Planets Building Blocks</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-definition-u-strong"><strong>‣  <u> Definition </u></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-discovery-and-early-history-u-strong"><strong>‣  <u> Discovery and Early History  </u></strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-direct-imaging-strong"><strong>‣ ‣  Direct Imaging </strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-the-first-strong"><strong>‣ ‣ ‣  The First </strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-the-famous-strong"><strong>‣ ‣ ‣  The Famous </strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-structure-strong"><strong> Structure </strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vertical-structure">Vertical structure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-constituents-strong"><strong> Constituents </strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#volatiles">Volatiles</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-observation-techniques-strong"><strong> Observation techniques </strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-rim">Inner Rim</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#midplane">Midplane</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">Properties</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physics-of-ppds">Physics of PPDs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dust-dynamics">Dust Dynamics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-mass-strong"><strong> ‣ ‣ Mass</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#vertical">Vertical</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-disk-component-orbital-velocity-strong">‣ ‣ ‣ <strong> Disk component orbital velocity </strong></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-snowline-strong"><strong> ‣ ‣ Snowline</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ices-in-ppd">Ices in PPD</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#observation">Observation</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#where-is-the-snow-line">Where is the snow-line</a></li>
+</ul>
+</li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#models">Models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-snowline-in-planet-formation">Importance of snowline in Planet formation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-o-ratio">C/O ratio</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#water-vapor-in-ppd">Water Vapor in PPD</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#co-snowline">CO snowline</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substructures">Substructures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alma">ALMA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debris-disk">Debris Disk</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planet-formation-scenario">Planet formation scenario</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-accretion-scenario">Core accretion scenario</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chemistry-in-disks">Chemistry in Disks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#molecule-detections">Molecule detections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assymetric-traps">Assymetric traps</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <strong>Vincent Deguin</strong> (with ❤️)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

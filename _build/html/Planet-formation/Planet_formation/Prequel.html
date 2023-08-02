@@ -1,0 +1,1248 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setting up the stage &#8212; Background</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/assets/GC/GC6-08-2022_fichiers/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/assets/Specific_pages/Business-canvas/style_business_canvas.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/coffee_cup.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/Cube.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CV_1.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/kittons.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/pomodoro-style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style_book_shell.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style_flipping_card.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style_wheel.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/custom_style-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/kittons-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/pomodoro-style-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/style_business_canvas-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/style_flipping_card-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/style_wheel-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/wheel_style-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "https://github.com/Deugz/jb-background");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script src="../../_static/assets/script/kittons.js"></script>
+    <script src="../../_static/assets/script/Pomodoro-script.js"></script>
+    <script src="../../_static/assets/script/scriptvideo.js"></script>
+    <script src="../../_static/assets/script/script_flipping_card.js"></script>
+    <script src="../../_static/assets/script/script_wheel.js"></script>
+    <script src="../../_static/assets/script/slideshow.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/kittons-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/Pomodoro-script-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/scriptvideo-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/script_blob-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/script_flipping_card-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/slideshow-checkpoint.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Planet-formation/Planet_formation/Prequel';</script>
+    <link rel="canonical" href="https://deugz.github.io/jb-background/_build/html/Planet-formation/Planet_formation/Prequel.html" />
+    <link rel="shortcut icon" href="../../_static/logo_SFTP.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Star Formation" href="Star_formation.html" />
+    <link rel="prev" title="Stars &amp; Planet Formation" href="Main_en_Planet_formation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo_SFTP.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo_SFTP.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io/Encyclopedia-Home/build/html/index.html" title="Home" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-house"></i></span>
+            <label class="sr-only">Home</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io/nb-profile/_build/html/intro.html" title="Profile" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-user"></i></span>
+            <label class="sr-only">Profile</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io/ab-blog/_website/index.html" title="Blog" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-blog"></i></span>
+            <label class="sr-only">Blog</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io/nb-tools/_build/html/intro.html" title="Tools" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-screwdriver-wrench"></i></span>
+            <label class="sr-only">Tools</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io" title="Forum" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-comments"></i></span>
+            <label class="sr-only">Forum</label></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Planet Formation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Science.html">Overview</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Main_en_Planet_formation.html">Stars &amp; Planet Formation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Setting up the stage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Star_formation.html">Star Formation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PPD.html">Protoplanetary Disks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Blocks.html">Planets Building Blocks</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Collision/Main_en_Collision.html">Dust Collisions &amp; Growth</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Collision/Migration.html">Migration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Collision/Collision.html">Collision &amp; Growth Mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Collision/Growth.html">Growth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Collision/Dynamics.html">Planetesimals Dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Collision/GeoChem.html">Geochemistry</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../HGW/Main_en_HGW.html">Hyperquenched Glassy Water</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../HGW/Amorphous.html">Amorphous Ices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HGW/HGW.html">HGW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HGW/Vitrification.html">Vitrification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HGW/Cooling.html">Cooling Processes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Levitation/Main_en_Levitation.html">Levitation and IR Signature</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Levitation/3DObs.html">Dust 3D Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Levitation/RightWing.html">3 µm Right Wing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Levitation/Levitation.html">Levitation techniques</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../to-include.html">To include</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Planet-formation/Planet_formation/Prequel.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Setting up the stage</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-interstellar-medium">The Interstellar Medium</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-galactic-ecocystem-and-star-lifecycle-u-strong"><strong> ‣ <u> Galactic Ecocystem and Star lifecycle </u></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-structure-and-environments-u-strong"><strong> ‣ <u> Structure and environments </u></strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interstellar-dust-grains">Interstellar Dust Grains</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-formation-and-evolution-u-strong"><strong>‣  <u> Formation and evolution </u></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-structure-u-strong"><strong>‣  <u> Structure  </u></strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-clouds">Molecular Clouds</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-observation-u-strong"><strong> ‣  <u> Observation  </u></strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-extinction-of-star-light-strong"><strong> ‣ ‣ Extinction of star light </strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-how-does-it-work-strong"><strong> ‣ ‣ ‣ How does it work ? </strong></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-distribution-strong"><strong> ‣ ‣ Distribution </strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-properties-u-strong"><strong> ‣ <u> Properties </u></strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-molecular-factory-strong"><strong> ‣ ‣ Molecular factory </strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-star-nursery-strong"><strong> ‣ ‣ Star nursery </strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#triggering-star-formation">Triggering star formation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-a-brief-history-of-our-own-solar-system-u-strong"><strong> ‣ <u> A Brief History of our own Solar system </u></strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-local-bubble">The local Bubble</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-pre-stellar-cores-u-strong"><strong> ‣ <u>  Pre Stellar Cores </u></strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-modelling">3D Modelling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="setting-up-the-stage">
+<h1>Setting up the stage<a class="headerlink" href="#setting-up-the-stage" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
+<h3> <strong> <u>  Introduction </u></strong> </h3>
+<p>Vincent Deguin</p>
+<p>2023-06-14</p>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-7 sd-col-xs-7 sd-col-sm-7 sd-col-md-7 sd-col-lg-7 docutils">
+It is commonly assumed by the public that appart from stars, our galaxy is empty, filled by void (as our eyes can see we we observe the night sky). And even though the vaccum we can achieve on Earth is higher than what we found in space, assuming that the medium between the stars (rightfully named the Interstellar Medium) is empty, is a big misconception.</div>
+<div class="sd-col sd-d-flex-column sd-col-5 sd-col-xs-5 sd-col-sm-5 sd-col-md-5 sd-col-lg-5 docutils">
+<p><strong>Plan</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="Star_formation.html#content-references-title1"><span class="std std-ref"><strong>The Interstellar Medium</strong></span></a><ul>
+<li>Galactic ecocystem and star lifecycle</li>
+<li>Structure and environments</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul class="simple">
+<li><a class="reference internal" href="#content-references-title2"><span class="std std-ref"><strong>Interstellar Dust Grains</strong></span></a><ul>
+<li>Formation and evolution</li>
+<li>Structure</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul class="simple">
+<li><a class="reference internal" href="#content-references-title3"><span class="std std-ref"><strong>Molecular Clouds</strong></span></a><ul>
+<li>Observation<ul>
+<li>Extinction of star light</li>
+<li>Distribution throughout the Galaxy</li>
+</ul>
+</li>
+<li>Properties<ul>
+<li>Molecular factories</li>
+<li>Star nurseries</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul class="simple">
+<li><a class="reference internal" href="#content-references-title4"><span class="std std-ref"><strong>Triggering star formation</strong></span></a></li>
+</ul>
+<br>
+<ul class="simple">
+<li><a class="reference internal" href="#content-references-title5"><span class="std std-ref"><strong>Summary</strong></span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text"><strong>Notes</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<div class="note dropdown admonition">
+<p class="first admonition-title">To Do</p>
+<ul class="last simple">
+<li><p class="sd-card-text first">Write the content, and send to Anita when happy</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="warning dropdown admonition">
+<p class="first admonition-title">Supervisors</p>
+<p class="sd-card-text last">Taking into consideration that this content is aimed at bachelor student or science enthusiast, what do you think about the format? The plan ?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text"><strong>Page</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text first">Status: <img alt="flag alt &gt;" src="Docs/Svg_icons/Under_construction.svg" /></p>
+</li>
+<li><p class="sd-card-text first">Reviewed: ❌</p>
+</li>
+<li><p class="sd-card-text first">Updated: 15/02/2023</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-interstellar-medium">
+<span id="content-references-title1"></span><h2>The Interstellar Medium<a class="headerlink" href="#the-interstellar-medium" title="Permalink to this heading">#</a></h2>
+<div class="section" id="strong-u-galactic-ecocystem-and-star-lifecycle-u-strong">
+<h3><strong> ‣ <u> Galactic Ecocystem and Star lifecycle </u></strong><a class="headerlink" href="#strong-u-galactic-ecocystem-and-star-lifecycle-u-strong" title="Permalink to this heading">#</a></h3>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-5 sd-col-xs-5 sd-col-sm-5 sd-col-md-5 sd-col-lg-5 docutils">
+<br>
+<br>
+<p class="emphase"> It is not unlikely in life that birth story start with death. So is the case for plants, whose death replenish the earth with organic matter that will make the terrain fertile for a new plant to emerge. Stars are no different in that respect and their life goes in cycle and the ISM is their ecocystem. </p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-7 sd-col-xs-7 sd-col-sm-7 sd-col-md-7 sd-col-lg-7 docutils">
+<div class="figure align-default" id="bouncing-lab">
+<a class="reference internal image-reference" href="../../_images/The-lifecycle-of-gas-dust.png"><img alt="../../_images/The-lifecycle-of-gas-dust.png" src="../../_images/The-lifecycle-of-gas-dust.png" style="width: 1000px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Figure caption</span><a class="headerlink" href="#bouncing-lab" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The Big Bang produced all the Hydrogen (as well as Helium and Lithium) present today in the universe. The rest of the elements of the periodic table (called metal by Astronomers), up to iron (Z = 26), has been produced in the center of stars in a process called <span class="hovertext" data-hover="Hydrogen is burned in fusion reaction and heavier elements are produced as the star evolve">nucleosynthesis</span>. However, it is only when the star die in a massive explosion like supernovae, that those heavy elements are ejected throughout the Universe. We are now 14.6 Billion years post Big Bang and at the third generation of stars, galaxies have had time to form and they will be our host for the rest of this discussion. So what are galaxies made of ? Well, a supermassive Black hole at the center and then stars (may be solar systems) as far as our eyes can see, but this would be omitting the major constituent of the</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>Introduce the ISM</strong></p>
+<ul class="last simple">
+<li>cycle</li>
+<li>Stars produce Ashes during their lifetime that are dispersed into the Diffuse ISM</li>
+<li>Big dust production when they die (supernovae)</li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="strong-u-structure-and-environments-u-strong">
+<h3><strong> ‣ <u> Structure and environments </u></strong><a class="headerlink" href="#strong-u-structure-and-environments-u-strong" title="Permalink to this heading">#</a></h3>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-5 sd-col-xs-5 sd-col-sm-5 sd-col-md-5 sd-col-lg-5 docutils">
+<br>
+<br>
+<p class="emphase"> ISM environments are interconnected and affect each other through a variety of physical and chemical processes, making the ISM a complex and dynamic medium.</p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-7 sd-col-xs-7 sd-col-sm-7 sd-col-md-7 sd-col-lg-7 docutils">
+<div class="figure align-default" id="mc-tranche">
+<a class="reference internal image-reference" href="../../_images/ISMstructP2.png"><img alt="../../_images/ISMstructP2.png" src="../../_images/ISMstructP2.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Figure caption</span><a class="headerlink" href="#mc-tranche" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><a class="reference internal" href="#mc-tranche"><span class="std std-numref">Fig. 8</span></a> show those different environments represented in an Onion like structure.</p>
+<div class="full-width docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span style="float: right"><img alt="flag alt &gt;" src="Docs/Svg_icons/onion-svgrepo-com.svg" /></span> Onion layers<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Coronal Gas</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">Coronal gas, also known as coronal plasma, is a type of hot, highly ionized gas that is found in the outermost atmosphere of stars, known as the corona, that  is the source of the solar wind and of coronal mass ejections. It is characterized by its extremely high temperatures, typically around 1 to 10 million degrees Celsius. This is much hotter than the surface of the star, which is typically around 5,500 to 5,800 degrees Celsius for the sun. Coronal gas is composed mostly of hydrogen and helium, as well as small amounts of other elements such as carbon, nitrogen, and oxygen. The high temperatures of this gas cause the atoms to become <span class="hovertext" data-hover="They have lost one or more of their electrons">highly ionized</span>.</p>
+<p class="sd-card-text">Coronal gas is a subject of ongoing research in astrophysics and heliophysics, as scientists try to understand how the corona is heated and how this relates to the solar wind and other solar activity</p>
+<p class="sd-card-text"><strong>Litterature</strong></p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Warm Gas</label><div class="sd-tab-content docutils">
+<p class="sd-card-text"><strong>Neutral</strong></p>
+<p class="sd-card-text">Temperature is around 8000K, density is around 0.1 to 1 particle per cubic centimeter, hydrogen is mostly neutral (H)</p>
+<p class="sd-card-text"><strong>Ionized</strong></p>
+<p class="sd-card-text">Temperature is around 8000 K, density is around 0.1 to 1 particle per cubic centimeter, hydrogen is mostly ionized (H+)</p>
+<p class="sd-card-text"><strong>Litterature</strong></p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Diffuse Gas</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">Description</p>
+<p class="sd-card-text"><strong>Litterature</strong></p>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Molecular Clouds</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">Description</p>
+<p class="sd-card-text"><strong>Litterature</strong></p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Dense Core</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">Description</p>
+<p class="sd-card-text"><strong>Litterature</strong></p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Hot Core</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">Description</p>
+<p class="sd-card-text"><strong>Litterature</strong></p>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Region H+</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">Description</p>
+<p class="sd-card-text"><strong>Litterature</strong></p>
+</div>
+</div>
+</div>
+</details></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>Evolution of material through the ISM</strong></p>
+<ul class="last simple">
+<li>Diffuse ISM - radiation - no ice</li>
+<li>Interconnectivity of the different environments - material exchange</li>
+<li>From low to high density environments</li>
+<li>Finally end up in the densest environments of the ISM, <strong>molecular clouds</strong></li>
+</ul>
+</div>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="interstellar-dust-grains">
+<span id="content-references-title2"></span><h2>Interstellar Dust Grains<a class="headerlink" href="#interstellar-dust-grains" title="Permalink to this heading">#</a></h2>
+<p class="emphase"> We have seen that dust grains are present in the ISM and play a key role in it's evolution but what are they and how do they come from</p>
+<div class="section" id="strong-u-formation-and-evolution-u-strong">
+<h3><strong>‣  <u> Formation and evolution </u></strong><a class="headerlink" href="#strong-u-formation-and-evolution-u-strong" title="Permalink to this heading">#</a></h3>
+<p>Interstellar dust form through a combination of processes in the interstellar medium (ISM). One of them is the <strong>condensation from the ejecta of evolved stars</strong>. As stars come closer to the end of their lives, they often experience mass loss through winds and outbursts, which can lead to the formation of dust grains. We had a recent great example of such processes with the star Betelgeuse that is explain below:</p>
+<div class="margin sidebar">
+<p class="first sidebar-title"></p>
+<div class="tip last admonition">
+<p class="first admonition-title">Betelgeuse</p>
+<ul class="last simple">
+<li>Red supergiant</li>
+<li>R☉ = 1000</li>
+</ul>
+</div>
+</div>
+<div class="figure align-default" id="betelgeuse-outburst">
+<a class="reference internal image-reference" href="../../_images/Betelgeuse_SME.jpg"><img alt="../../_images/Betelgeuse_SME.jpg" src="../../_images/Betelgeuse_SME.jpg" style="width: 1000px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Betelgeuse Outburst (<strong>Artist impression</strong>) <a class="reference external" href="https://www.nasa.gov/feature/goddard/2020/hubble-finds-that-betelgeuses-mysterious-dimming-is-due-to-a-traumatic-outburst" rel="noopener noreferrer" target="_blank">Source</a></span><a class="headerlink" href="#betelgeuse-outburst" title="Permalink to this image">#</a></p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Scientific Observations<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Direct Imaging</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">Sphere Instrument - ESO VLT</p>
+<div class="figure align-default" id="betelgeuse-sphere-instrument">
+<a class="reference internal image-reference" href="../../_images/Eso2003c.jpg"><img alt="../../_images/Eso2003c.jpg" src="../../_images/Eso2003c.jpg" style="width: 1000px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text"><a class="reference external" href="https://commons.wikimedia.org/wiki/File:Eso2003c.jpg" rel="noopener noreferrer" target="_blank">Source</a></span><a class="headerlink" href="#betelgeuse-sphere-instrument" title="Permalink to this image">#</a></p>
+</div>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Spectroscopy ?</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p class="sd-card-text first"><a class="reference external" href="https://www.aavso.org/LCGv2/static.htm?DateFormat=Calendar&amp;RequestedBands=V,R&amp;Grid=true&amp;view=api.delim&amp;ident=betelgeuse&amp;fromjd=2458120&amp;tojd=2459961.165&amp;delimiter=&#64;&#64;&#64;" rel="noopener noreferrer" target="_blank">Static curves</a></p>
+</li>
+<li><p class="sd-card-text first"><a class="reference external" href="https://www.aavso.org/LCGv2/index.htm?DateFormat=Calendar&amp;RequestedBands=V,R&amp;view=api.delim&amp;ident=betelgeuse&amp;fromjd=2458120&amp;tojd=2459961.165&amp;delimiter=&#64;&#64;&#64;" rel="noopener noreferrer" target="_blank">Interactive curve</a></p>
+</li>
+</ul>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/Betelgeuse_dim_plot.png"><img alt="../../_images/Betelgeuse_dim_plot.png" src="../../_images/Betelgeuse_dim_plot.png" style="width: 1000px;" /></a>
+</div>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+Emission</label><div class="sd-tab-content docutils">
+<div class="figure align-default" id="betelgeuse-emission">
+<a class="reference internal image-reference" href="../../_images/Betelgeuse_3.png"><img alt="../../_images/Betelgeuse_3.png" src="../../_images/Betelgeuse_3.png" style="width: 1000px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text"><a class="reference external" href="https://hubblesite.org/contents/media/images/2020/44/4727-Image?itemsPerPage=100&amp;page=2&amp;filterUUID=5a370ecc-f605-44dd-8096-125e4e623945" rel="noopener noreferrer" target="_blank">Source</a></span><a class="headerlink" href="#betelgeuse-emission" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+</div>
+</details><p><strong>Review</strong>: Carbonaceous grains <span id="id2">[<a class="reference internal" href="../../bibliography.html#id157" title="Víctor J. Herrero, Miguel Jiménez-Redondo, Ramón J. Peláez, Belén Maté, and Isabel Tanarro. Structure and evolution of interstellar carbonaceous dust. insights from the laboratory. Frontiers in Astronomy and Space Sciences, 12 2022. doi:10.3389/fspas.2022.1083288.">Herrero <em>et al.</em>, 2022</a>]</span></p>
+<p>Interstellar dust is the Ariane thread connecting star death with star formation after having evolved through the ISM.</p>
+</div>
+<div class="section" id="strong-u-structure-u-strong">
+<h3><strong>‣  <u> Structure  </u></strong><a class="headerlink" href="#strong-u-structure-u-strong" title="Permalink to this heading">#</a></h3>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-7 sd-col-xs-7 sd-col-sm-7 sd-col-md-7 sd-col-lg-7 docutils">
+<div class="figure align-default" id="interstellar-dust">
+<a class="reference internal image-reference" href="../../_images/Interstellar_dust.png"><img alt="../../_images/Interstellar_dust.png" src="../../_images/Interstellar_dust.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Interstellar Dust</span><a class="headerlink" href="#interstellar-dust" title="Permalink to this image">#</a></p>
+</div>
+<p><strong>Structure</strong></p>
+<ul class="simple">
+<li>Core</li>
+</ul>
+<p>Silicate or carbonaceous material …</p>
+<ul class="simple">
+<li>Ice layer</li>
+</ul>
+<p>check formation processses</p>
+<p>Condensation temperature</p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-5 sd-col-xs-5 sd-col-sm-5 sd-col-md-5 sd-col-lg-5 docutils">
+<p class="emphase">sub-µm dust grains</p>
+<p><span id="id3">[<a class="reference internal" href="../../bibliography.html#id172">Williams, 2000</a>]</span> - from ashes to dust</p>
+<p>Here is a typical dust grain that can be found inside a Molecular clouds. Because low temperature the grain is surrounded by an icy layer.</p>
+<p>This ice layer is responsible for most of the chemistry observed in the ISM</p>
+<ul class="simple">
+<li>link to molecular zoo …</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p>Paragraph</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>Introduction to dust</strong></p>
+<ul class="simple">
+<li>Ice - link to intro Thesis.A with more details</li>
+<li>Dust processing within MC: preliminary growth up to µm sizes.</li>
+<li>Role in chemistry</li>
+<li>Ice formed by atomic deposition, diffusion, reaction of atomic species to form molecules.</li>
+</ul>
+<p><strong>Astrophysics of dust grains</strong></p>
+<ul class="simple">
+<li>physical optics of small particles</li>
+<li>charging of dust grains</li>
+<li>heating and cooling of dust grains</li>
+<li>chemistry on dust grain surfaces</li>
+<li>forces and torques on dust grains</li>
+<li>sputtering and shattering of dust grains</li>
+<li>alignment of dust with the magnetic field</li>
+</ul>
+<p class="last">introduction to these topics can be found elsewhere (Kr¨ugel 2002, Draine 2003a)</p>
+</div>
+</div>
+</div>
+<div class="section" id="molecular-clouds">
+<span id="content-references-title3"></span><h2>Molecular Clouds<a class="headerlink" href="#molecular-clouds" title="Permalink to this heading">#</a></h2>
+<div class="section" id="strong-u-observation-u-strong">
+<h3><strong> ‣  <u> Observation  </u></strong><a class="headerlink" href="#strong-u-observation-u-strong" title="Permalink to this heading">#</a></h3>
+<div class="section" id="strong-extinction-of-star-light-strong">
+<h4><strong> ‣ ‣ Extinction of star light </strong><a class="headerlink" href="#strong-extinction-of-star-light-strong" title="Permalink to this heading">#</a></h4>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<input type="radio" class="inpS" name="gallery" id="slide-1"/>
+<input type="radio" class="inpS" name="gallery" id="slide-2"/>
+<input type="radio" class="inpS" name="gallery" id="slide-3"/>
+<input type="radio" class="inpS" name="gallery" id="slide-4"/>
+<input type="radio" class="inpS" name="gallery" id="slide-5"/>
+<input type="radio" class="inpS" name="gallery" id="slide-6"/>
+<div id="gallery"></div>
+<div class="slides">
+  <label class="labelSC" for="slide-1"></label>
+  <label class="labelSC" for="slide-2"></label>
+  <label class="labelSC" for="slide-3"></label>
+  <label class="labelSC" for="slide-4"></label>
+  <label class="labelSC" for="slide-5"></label>
+  <label class="labelSC" for="slide-6"></label>
+</div>
+<div class="figure align-left" id="b68-complement">
+<a class="reference internal image-reference" href="../../_images/B68_complement.png"><img alt="../../_images/B68_complement.png" src="../../_images/B68_complement.png" style="width: 380px;" /></a>
+</div>
+<p>Images source: <a class="reference external" href="https://www.eso.org/public/images/eso9934b/" rel="noopener noreferrer" target="_blank">ESO</a> - <a class="reference external" href="https://apod.nasa.gov/apod/image/2011/barnard68v2_vlt_4000.jpg" rel="noopener noreferrer" target="_blank">Apod</a></p>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<p class="emphase">B68 was first observed in 1785 by the great astronomers William Hershell, nonetheless he described it unapropriately as <br><br> " <strong> Hole in the sky </strong>" </p>
+<div class="tip dropdown admonition">
+<p class="first admonition-title">Woman in Science ⚠ - <em>Caroline Hershell</em></p>
+<p class="last">Caroline Hershell (his wife), was a much less famous but non less great scientist. It is thanks to a correspondance between her and her nephew that the discovery was revived after having fall into oblivion.</p>
+</div>
+<p>Indeed, our dear William couldn’t have been more wrong (yes, it happens to everybody, including the greatest) <span id="id4">[<a class="reference internal" href="../../bibliography.html#id158" title="Wolfgang Steinicke, William Herschel, Caroline Herschel, John Herschel, Johann Georg Hagen, and Angelo Secchi. William herschel's 'hole in the sky' and the discovery of dark nebulae. Journal of Astronomical History and Heritage, 19:305-326, 2016. URL: www.spacerip.com/women-.">Steinicke <em>et al.</em>, 2016</a>]</span>. Molecular Clouds are full gus and dust particles like we have described abova and this it the reason why they obstruct the light of stars in the background, a process called <strong>extinction</strong>. It is a very important concept because most of our knowledge of interstellar dust is derived from the interaction of dust particles with electromagnetic radiation:</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="strong-how-does-it-work-strong">
+<h5><strong> ‣ ‣ ‣ How does it work ? </strong><a class="headerlink" href="#strong-how-does-it-work-strong" title="Permalink to this heading">#</a></h5>
+<p>Absorption / Scattering</p>
+<ul class="simple">
+<li><strong>Attenuation of starlight</strong>  A<sub>λ</sub></li>
+</ul>
+<p>Wavelength dependance of <code class="docutils literal notranslate"><span class="pre">interstellar</span> <span class="pre">extinction</span></code> gives information about the size and composition of the grains. Best determined using the <span class="comparison of the fluxes from two stars with nearly-identical spectroscopic features, but with one of the stars nearly unaffected by dust" data-hover="Definition">pair method</span>.</p>
+<ul class="simple">
+<li>R<sub>V</sub></li>
+</ul>
+</div>
+</div>
+<div class="section" id="strong-distribution-strong">
+<h4><strong> ‣ ‣ Distribution </strong><a class="headerlink" href="#strong-distribution-strong" title="Permalink to this heading">#</a></h4>
+<div class="full-width docutils">
+<figure id="transition-img">
+<div class="images-JWST">
+<img src="../../_static/assets/MC/Gaia_s_sky_in_colour.jpg" alt="" class="two">
+<img src="../../_static/assets/MC/MC_Distribution_galaxy.png" alt="" class="one">
+</div>
+<figcaption>Hover the figure to switch between images - <a href="https://www.esa.int/Science_Exploration/Space_Science/Gaia/Gaia_creates_richest_star_map_of_our_Galaxy_and_beyond" target="blank"> Image 1 </a> Gaia image of the Galactic plane  - <a href="https://lweb.cfa.harvard.edu/mmw/Fig2_Dame.pdf" target="blank"> Image 2 </a> Molecular cloud mapping </figcaption>
+</figure>
+</div>
+<p>For an interactive view of the Galaxy at multiple wavelength over the whole electromagnetic spectrum, check <a href="https://chromoscope.net/" target="blank"> Chromoscope </a>.</p>
+<div class="margin sidebar">
+<p class="first sidebar-title"></p>
+<div class="seealso dropdown last admonition">
+<p class="first admonition-title">Scientific Activity</p>
+<p>Open the dropdown on your left and have a look at the different molecular clouds. With the help of figure X and the coordinates given, find those clouds using the following link.</p>
+<ul class="last simple">
+<li><a class="reference external" href="http://sky.esa.int/" rel="noopener noreferrer" target="_blank">ESA Sky</a></li>
+</ul>
+</div>
+</div>
+<br>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+The most famous Molecular Clouds (and some of their science)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+Ophiuchus</label><div class="sd-tab-content docutils">
+<p class="sd-card-text"><strong>Litterature</strong></p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
+Warm Gas</label><div class="sd-tab-content docutils">
+<p class="sd-card-text"><strong>Litterature</strong></p>
+</div>
+<input id="sd-tab-item-12" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
+Diffuse Gas</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">Description</p>
+<p class="sd-card-text"><strong>Litterature</strong></p>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
+Molecular Clouds</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">Description</p>
+<p class="sd-card-text"><strong>Litterature</strong></p>
+</div>
+</div>
+</div>
+</details></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="strong-u-properties-u-strong">
+<h3><strong> ‣ <u> Properties </u></strong><a class="headerlink" href="#strong-u-properties-u-strong" title="Permalink to this heading">#</a></h3>
+<div class="section" id="structure">
+<h4>Structure<a class="headerlink" href="#structure" title="Permalink to this heading">#</a></h4>
+<p><strong>Filament structure</strong></p>
+<ul class="simple">
+<li><a class="reference external" href="https://academic.oup.com/mnras/article-abstract/522/3/3890/7143799?redirectedFrom=fulltext&amp;login=false" rel="noopener noreferrer" target="_blank">Article</a> to extract and put in bib</li>
+</ul>
+</div>
+<div class="section" id="strong-molecular-factory-strong">
+<h4><strong> ‣ ‣ Molecular factory </strong><a class="headerlink" href="#strong-molecular-factory-strong" title="Permalink to this heading">#</a></h4>
+<p>Quiescent over long timescales. Shield dust from radiation …</p>
+</div>
+<div class="section" id="strong-star-nursery-strong">
+<h4><strong> ‣ ‣ Star nursery </strong><a class="headerlink" href="#strong-star-nursery-strong" title="Permalink to this heading">#</a></h4>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../../_images/Molecular_cloud_Pillar_cut.png"><img alt="../../_images/Molecular_cloud_Pillar_cut.png" src="../../_images/Molecular_cloud_Pillar_cut.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text"><a class="reference external" href="https://commons.wikimedia.org/wiki/File:Eagle_nebula_pillars.jpg" rel="noopener noreferrer" target="_blank">Source</a></span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</div>
+<p>link to teaching JWST to see more pictures</p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<p class="emphase">Star nurseries</p>
+<p>Our fascinating story of stars and planet formation begins in the darkest and coldest places of the <span class="hovertext" data-hover="The medium between the Stars (ISM), made of multiple environments with various conditions, temperature, density, radiation fields etc.">Interstellar Medium</span>, Molecular Clouds.
+Those clouds, made of gas and dusts are the cocoons within which star forms. They evolve for […] years, …</p>
+<ul class="simple">
+<li>Clumps</li>
+<li>Critical mass - <strong>Jeans instability</strong></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>Star nursery</strong></p>
+<ul class="last simple">
+<li>Gas + Dust, High density, protected from radiation</li>
+<li>Diverse molecular content, <strong>Chemistry</strong> - How ?</li>
+<li>Surface of <strong>dust grains</strong></li>
+</ul>
+</div>
+<hr class="docutils" />
+</div>
+</div>
+</div>
+<div class="section" id="triggering-star-formation">
+<span id="content-references-title4"></span><h2>Triggering star formation<a class="headerlink" href="#triggering-star-formation" title="Permalink to this heading">#</a></h2>
+<p>How does the process of star formation beggin ? not out of the blue</p>
+<ul class="simple">
+<li>Contraction of molecular cloud OK but what else</li>
+</ul>
+<div class="section" id="strong-u-a-brief-history-of-our-own-solar-system-u-strong">
+<h3><strong> ‣ <u> A Brief History of our own Solar system </u></strong><a class="headerlink" href="#strong-u-a-brief-history-of-our-own-solar-system-u-strong" title="Permalink to this heading">#</a></h3>
+<p>4.6 Billion years ago …</p>
+<div class="section" id="the-local-bubble">
+<h4>The local Bubble<a class="headerlink" href="#the-local-bubble" title="Permalink to this heading">#</a></h4>
+<p><span id="id6">[<a class="reference internal" href="../../bibliography.html#id152" title="Catherine Zucker, Alyssa A. Goodman, João Alves, Shmuel Bialy, Michael Foley, Joshua S. Speagle, Josefa Groβschedl, Douglas P. Finkbeiner, Andreas Burkert, Diana Khimey, and Cameren Swiggum. Star formation near the sun is driven by expansion of the local bubble. Nature, 601:334-337, 1 2022. doi:10.1038/s41586-021-04286-5.">Zucker <em>et al.</em>, 2022</a>]</span></p>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<p>Explanation,</p>
+<p>Go check the various star formation region in Figure X</p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<div class="figure align-default" id="local-bubble">
+<a class="reference internal image-reference" href="../../_images/Local_Bubble.png"><img alt="../../_images/Local_Bubble.png" src="../../_images/Local_Bubble.png" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text"><a class="reference external" href="https://hubblesite.org/contents/media/images/2022/006/01FS4Y67XXY8Y8HBVK4V404G21?itemsPerPage=100" rel="noopener noreferrer" target="_blank">Source</a></span><a class="headerlink" href="#local-bubble" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="strong-u-pre-stellar-cores-u-strong">
+<h3><strong> ‣ <u>  Pre Stellar Cores </u></strong><a class="headerlink" href="#strong-u-pre-stellar-cores-u-strong" title="Permalink to this heading">#</a></h3>
+<div class="section" id="d-modelling">
+<h4>3D Modelling<a class="headerlink" href="#d-modelling" title="Permalink to this heading">#</a></h4>
+<p><a class="reference external" href="https://arxiv.org/abs/2305.05932" rel="noopener noreferrer" target="_blank">Arxiv</a> - to download when published</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Filament structure …</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<span id="content-references-title5"></span><h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<figure id="transition-img">
+<div class="images-Nebula">
+<img src="../../_static/assets/MC/Beautyfull_star_formation_IR.png" alt="" class="two">
+<img src="../../_static/assets/MC/Beautyfull_star_formation_V.png" alt="" class="one">
+</div>
+<figcaption>Hover the figure to switch between images - <a href="https://hubblesite.org/contents/media/images/2018/21/4150-Image.html?itemsPerPage=100&page=5&filterUUID=5a370ecc-f605-44dd-8096-125e4e623945" target="blank"> Image 1 </a> Visible  - <a href="https://hubblesite.org/contents/media/images/2018/21/4151-Image.html?itemsPerPage=100&page=5&filterUUID=5a370ecc-f605-44dd-8096-125e4e623945" target="blank"> Image 2 </a> Infrared </figcaption>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<br>
+<br>
+<p>We have seen that …</p>
+<p><strong>Next Steps</strong></p>
+<hr class="docutils" />
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Planet-formation\Planet_formation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Main_en_Planet_formation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Stars &amp; Planet Formation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Star_formation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Star Formation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-interstellar-medium">The Interstellar Medium</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-galactic-ecocystem-and-star-lifecycle-u-strong"><strong> ‣ <u> Galactic Ecocystem and Star lifecycle </u></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-structure-and-environments-u-strong"><strong> ‣ <u> Structure and environments </u></strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interstellar-dust-grains">Interstellar Dust Grains</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-formation-and-evolution-u-strong"><strong>‣  <u> Formation and evolution </u></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-structure-u-strong"><strong>‣  <u> Structure  </u></strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-clouds">Molecular Clouds</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-observation-u-strong"><strong> ‣  <u> Observation  </u></strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-extinction-of-star-light-strong"><strong> ‣ ‣ Extinction of star light </strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-how-does-it-work-strong"><strong> ‣ ‣ ‣ How does it work ? </strong></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-distribution-strong"><strong> ‣ ‣ Distribution </strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-properties-u-strong"><strong> ‣ <u> Properties </u></strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-molecular-factory-strong"><strong> ‣ ‣ Molecular factory </strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-star-nursery-strong"><strong> ‣ ‣ Star nursery </strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#triggering-star-formation">Triggering star formation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-a-brief-history-of-our-own-solar-system-u-strong"><strong> ‣ <u> A Brief History of our own Solar system </u></strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-local-bubble">The local Bubble</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-u-pre-stellar-cores-u-strong"><strong> ‣ <u>  Pre Stellar Cores </u></strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-modelling">3D Modelling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <strong>Vincent Deguin</strong> (with ❤️)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1417 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collision &amp; Growth Mechanism &#8212; Background</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/assets/GC/GC6-08-2022_fichiers/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/assets/Specific_pages/Business-canvas/style_business_canvas.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/coffee_cup.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/Cube.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CV_1.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/kittons.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/pomodoro-style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style_book_shell.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style_flipping_card.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style_wheel.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/custom_style-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/kittons-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/pomodoro-style-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/style_business_canvas-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/style_flipping_card-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/style_wheel-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/.ipynb_checkpoints/wheel_style-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "https://github.com/Deugz/jb-background");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script src="../../_static/assets/script/kittons.js"></script>
+    <script src="../../_static/assets/script/Pomodoro-script.js"></script>
+    <script src="../../_static/assets/script/scriptvideo.js"></script>
+    <script src="../../_static/assets/script/script_flipping_card.js"></script>
+    <script src="../../_static/assets/script/script_wheel.js"></script>
+    <script src="../../_static/assets/script/slideshow.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/kittons-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/Pomodoro-script-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/scriptvideo-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/script_blob-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/script_flipping_card-checkpoint.js"></script>
+    <script src="../../_static/assets/script/.ipynb_checkpoints/slideshow-checkpoint.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Planet-formation/Collision/Collision';</script>
+    <link rel="canonical" href="https://deugz.github.io/jb-background/_build/html/Planet-formation/Collision/Collision.html" />
+    <link rel="shortcut icon" href="../../_static/logo_SFTP.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Growth" href="Growth.html" />
+    <link rel="prev" title="Migration" href="Migration.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo_SFTP.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo_SFTP.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io/Encyclopedia-Home/build/html/index.html" title="Home" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-house"></i></span>
+            <label class="sr-only">Home</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io/nb-profile/_build/html/intro.html" title="Profile" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-user"></i></span>
+            <label class="sr-only">Profile</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io/ab-blog/_website/index.html" title="Blog" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-blog"></i></span>
+            <label class="sr-only">Blog</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io/nb-tools/_build/html/intro.html" title="Tools" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-screwdriver-wrench"></i></span>
+            <label class="sr-only">Tools</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deugz.github.io" title="Forum" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-comments"></i></span>
+            <label class="sr-only">Forum</label></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Planet Formation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Science.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Planet_formation/Main_en_Planet_formation.html">Stars &amp; Planet Formation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Planet_formation/Prequel.html">Setting up the stage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Planet_formation/Star_formation.html">Star Formation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Planet_formation/PPD.html">Protoplanetary Disks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Planet_formation/Blocks.html">Planets Building Blocks</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Main_en_Collision.html">Dust Collisions &amp; Growth</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Migration.html">Migration</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Collision &amp; Growth Mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Growth.html">Growth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dynamics.html">Planetesimals Dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GeoChem.html">Geochemistry</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../HGW/Main_en_HGW.html">Hyperquenched Glassy Water</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../HGW/Amorphous.html">Amorphous Ices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HGW/HGW.html">HGW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HGW/Vitrification.html">Vitrification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HGW/Cooling.html">Cooling Processes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Levitation/Main_en_Levitation.html">Levitation and IR Signature</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Levitation/3DObs.html">Dust 3D Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Levitation/RightWing.html">3 µm Right Wing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Levitation/Levitation.html">Levitation techniques</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../to-include.html">To include</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Planet-formation/Collision/Collision.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Collision & Growth Mechanism</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#science-of-collisions">Science of Collisions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-strength">Collision Strength</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#coefficient-of-restitution">Coefficient of restitution ε</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-loss">Energy Loss</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compaction">Compaction</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-outcomes">Collision Outcomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-monomer-to-aggregates">From Monomer to aggregates</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modification-from-collision">Modification from collision</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#grain-charging">Grain charging</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-collision-parameter-space">Aggregate collision parameter space</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation">Computation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-experiments">Collision Experiments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microgravity">Microgravity</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parabolic-flights">Parabolic flights</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sounding-rockets">Sounding Rockets</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-tower-experiments">Drop tower experiments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dust-collisions">Dust Collisions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-speed">High speed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dust-agglomerates">Dust agglomerates</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#centimeter-size">Centimeter size</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decimeter-size">Decimeter size</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-collisions">Multiple Collisions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chondrules">Chondrules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ice-particles-collisions">Ice Particles Collisions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparisons">Comparisons</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#co2-h2o">CO2 + H2O</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#co2">CO2</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-experiments">Impact experiments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dust-ice">Dust + Ice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ice-aggregates-collisions">Ice aggregates collisions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sticking-properties">Sticking properties</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sticking-between-monomers">Sticking between monomers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-dependance">Mass dependance</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-mass">Relative Mass</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#size-dependance">Size dependance</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity">Velocity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-angle">Impact angle</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-effects">Surface effects</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic">Magnetic</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ou-setup">OU setup</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-outcomes">Collisions Outcomes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#models">Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#growth">Growth</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id73">Computation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-formation">Aggregate formation</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#density-evolution">Density evolution</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sintering">Sintering</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-transfer">Mass Transfer</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#erosion">Erosion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-of-collision-on-amorphous-ice">Effects of collision on Amorphous Ice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bouncing-barrier">The Bouncing Barrier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="collision-growth-mechanism">
+<h1>Collision &amp; Growth Mechanism<a class="headerlink" href="#collision-growth-mechanism" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
+<h3> <strong> <u>  Introduction </u></strong> </h3>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-7 sd-col-xs-7 sd-col-sm-7 sd-col-md-7 sd-col-lg-7 docutils">
+Intro paragraph</div>
+<div class="sd-col sd-d-flex-column sd-col-5 sd-col-xs-5 sd-col-sm-5 sd-col-md-5 sd-col-lg-5 docutils">
+<p><strong>Plan</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../Planet_formation/Star_formation.html#content-references-title1"><span class="std std-ref"><strong>Science of Collisions</strong></span></a></li>
+<li><a class="reference internal" href="../Planet_formation/Star_formation.html#content-references-title1"><span class="std std-ref"><strong>Collision Experiments</strong></span></a><ul>
+<li>Subsection</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul class="simple">
+<li><strong>Summary</strong></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text"><strong>Notes</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<div class="note dropdown admonition">
+<p class="first admonition-title">To Do</p>
+<ul class="last simple">
+<li><p class="sd-card-text first">Think about coherent plan</p>
+</li>
+<li><p class="sd-card-text first">Implement</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="tip dropdown admonition">
+<p class="first admonition-title">Colaboration</p>
+<p class="sd-card-text last">Presentation</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header bg-light docutils">
+<p class="sd-card-text"><strong>Page</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text first">Status: <img alt="flag alt &gt;" src="Docs/Svg_icons/Under_construction.svg" /></p>
+</li>
+<li><p class="sd-card-text first">Reviewed: ❌</p>
+</li>
+<li><p class="sd-card-text first">Updated: 15/02/2023</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="introduction">
+<span id="content-references-title1"></span><h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<div class="section" id="science-of-collisions">
+<h3>Science of Collisions<a class="headerlink" href="#science-of-collisions" title="Permalink to this heading">#</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Insert collision outcome diagram</p>
+<p>Sabrina stuffs …</p>
+<ul class="last simple">
+<li>Present the interplay between modelling / Experiments</li>
+</ul>
+</div>
+<ul class="simple">
+<li><strong>Review</strong><span id="id1">[<a class="reference internal" href="../../bibliography.html#id77" title="C Dominik. The physics of dust coagulation and the structure of dust aggregates in space. THE ASTROPHYSICAL JOURNAL, 480:647-673, 1997.">Dominik, 1997</a>]</span>: Modelling (collisions of dust, ice + other materials), results: growth of aggregates by monomers normally not restructures them, hit-and-stick assumption reasonably valid, significant compaction in aggregate collisions, critical energies for different restructuring processes (help modelling), turbulence compresses aggregates.</li>
+</ul>
+<p><a class="reference external" href="https://hubblesite.org/contents/media/images/2020/09/4625-Image?itemsPerPage=100&amp;page=3&amp;filterUUID=5a370ecc-f605-44dd-8096-125e4e623945" rel="noopener noreferrer" target="_blank">Image + science of big body collisions leading to dust cloud</a></p>
+<div class="section" id="collision-strength">
+<h4>Collision Strength<a class="headerlink" href="#collision-strength" title="Permalink to this heading">#</a></h4>
+<p class="emphase">Measure of a transfer of momentum in units of energy</p>
+</div>
+<div class="section" id="coefficient-of-restitution">
+<h4>Coefficient of restitution ε<a class="headerlink" href="#coefficient-of-restitution" title="Permalink to this heading">#</a></h4>
+<p>ε is …</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.youtube.com/watch?v=uzfeib3MkF8" rel="noopener noreferrer" target="_blank">Youtube tutorial</a></li>
+</ul>
+<p class="last">Insert in teaching material about movement</p>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id2">[<a class="reference internal" href="../../bibliography.html#id15" title="S. Krijt, C. Güttler, D. Heißelmann, C. Dominik, and A. G.G.M. Tielens. Energy dissipation in head-on collisions of spheres. Journal of Physics D: Applied Physics, 10 2013. doi:10.1088/0022-3727/46/43/435303.">Krijt <em>et al.</em>, 2013</a>]</span>: Modelling COR (treat adhesion + viscoelasticity self-consistently, add up energy losses from deformation), viscoelasticity can increase enery dissipation (increasing sticking velocity), collisions above sticking velocity remain dissipative, comparison with lab experiments, model reproduced ε(v) relation observed in experiments (wide range of materials + particle sizes), adhesion + viscoelasticity + deformation are required for realistic model.</li>
+</ul>
+</div>
+<div class="section" id="energy-loss">
+<h4>Energy Loss<a class="headerlink" href="#energy-loss" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id3">[<a class="reference internal" href="../../bibliography.html#id103" title="Frank G Bridges, Kimberley D Supulver, D N C Lin, Roberta Knight, and Mario Zafra. Energy loss and sticking mechanisms in particle aggregation in planetesimal formation. ICARUS, 123:422-435, 1996.">Bridges <em>et al.</em>, 1996</a>]</span>: Contact sticking experiments (surfaces coated with different types of frost, deposited at various low T and p) results: several frost coated surfaces stick together when brought into contact at ≈ 100 K, sticking force depends on deposition conditions, ice particles covered with H2O/CO2: sticking at low impact velocities, energy loss depends on v and surfaces structure, CH3OH: also effective sticky frost.</li>
+</ul>
+</div>
+<div class="section" id="compaction">
+<h4>Compaction<a class="headerlink" href="#compaction" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id4">[<a class="reference internal" href="../../bibliography.html#id87" title="Toru Suyama, Koji Wada, Hidekazu Tanaka, and Satoshi Okuzumi. Geometric cross sections of dust aggregates and a compression model for aggregate collisions. Astrophysical Journal, 7 2012. doi:10.1088/0004-637X/753/2/115.">Suyama <em>et al.</em>, 2012</a>]</span>: 3D N-body simulations (sequential collisions, aggregates composed of sub-micron-sized icy dust particles, coupling with disk gas, non-equal-mass/equal-mass collisions), insufficient compression -&gt; remain fluffy</li>
+</ul>
+<div class="admonition-dust-aggregates-properties admonition">
+<p class="first admonition-title">Dust aggregates Properties</p>
+<ul class="last simple">
+<li>Geometrical cross section</li>
+<li>Volume filling factor</li>
+<li>More ? Y</li>
+</ul>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id5">[<a class="reference internal" href="../../bibliography.html#id83" title="Minami Yasui and Masahiko Arakawa. Compaction experiments on ice-silica particle mixtures: implication for residual porosity of small icy bodies. Journal of Geophysical Research: Planets, 2009. doi:10.1029/2009JE003374.">Yasui and Arakawa, 2009</a>]</span>: Compaction experiments (ice-silica mix, silica volume fractions 0 – 0.29, constant compression speed (0.2 / 2.0 mm/min), 263 K (30 MPa max compaction pressure) or 206 – 218 K (80 MPa max compaction pressure)), results: residual porosity larger for higher silica fractions (0.01 – 0.14 &#64;(263 K &amp; 30 MPa), 2 – 10 times larger &#64;(206 – 218 K &amp; 80 MPa)), model: predicts icy bodies &lt; 700 km diameter to have residual porosity &gt; 0.3 for T &lt; 218 K.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="collision-outcomes">
+<h3>Collision Outcomes<a class="headerlink" href="#collision-outcomes" title="Permalink to this heading">#</a></h3>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<p>Explanation</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Split image in 3 with the different outcomes:</p>
+<ul class="last simple">
+<li>Sticking</li>
+<li>Bouncing</li>
+<li>Fragmentation</li>
+</ul>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="figure align-default" id="id85">
+<img alt="../../_images/Bouncing_Outcomes_Guttler.png" src="../../_images/Bouncing_Outcomes_Guttler.png" />
+<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">Caption</span><a class="headerlink" href="#id85" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><span id="id6">[<a class="reference internal" href="../../bibliography.html#id71">Güttler <em>et al.</em>, 2009</a>]</span>:</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Good review, <strong>to read</strong></p>
+</div>
+</div>
+<div class="section" id="from-monomer-to-aggregates">
+<h3>From Monomer to aggregates<a class="headerlink" href="#from-monomer-to-aggregates" title="Permalink to this heading">#</a></h3>
+<hr class="docutils" />
+<p><strong>Theory</strong>:</p>
+<ul class="simple">
+<li><span id="id7">[<a class="reference internal" href="../../bibliography.html#id27" title="Arati Chokshi, A. G. G. M. Tielens, and D. Hollenbach. Dust coagulation. The Astrphysical Journal, 407:806-819, 1993.">Chokshi <em>et al.</em>, 1993</a>]</span>: silicate, icy, carbonaceous grains, numerical modelling, collision of two smooth/elastic/spherical grains, critical velocity (bouncing barrier) grain size dependent, coagulation too slow for efficient growth, but efficiently removes small grains from cloud.</li>
+</ul>
+<p><strong>Review</strong></p>
+<ul class="simple">
+<li><span id="id8">[<a class="reference internal" href="../../bibliography.html#id14">Güttler <em>et al.</em>, 2012</a>]</span>: Summary of experimental data (COR for various materials), preparation for model paper, digitized data of all summarised experiments provided with the article.</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id9">[<a class="reference internal" href="../../bibliography.html#id59" title="J. D. Perry, E. Gostomski, L. S. Matthews, and T. W. Hyde. The influence of monomer shape on aggregate morphologies. Astronomy and Astrophysics, 2012. doi:10.1051/0004-6361/201117940.">Perry <em>et al.</em>, 2012</a>]</span>: influence of monomer shape (prolate ellipsoidal/spherical) on morphology of dust aggregates, particle-cluster aggregation vs. cluster-cluster aggregation, shape and aggregation mechanism influence compactness (8 – 80 %) and friction times, aggregates of spherical particles may not be good analogues for ISM dust</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Use this part to introduce the important theroetical parameters to study collisions</p>
+</div>
+<ul class="simple">
+<li><span id="id10">[]</span>: Collision experiments (microgravity (sounding rocket, duration: several minutes), Brownian motion-induced coagulation process of μm-sized dust), result: subsequent collisions form fractal dust aggregates.</li>
+<li><span id="id11">[<a class="reference internal" href="../../bibliography.html#id36" title="Jürgen Blum and Gerhard Wurm. Experiments on sticking, restructuring, and fragmentation of preplanetary dust aggregates. Icarus, 143:138-146, 1 2000. doi:10.1006/icar.1999.6234.">Blum and Wurm, 2000</a>]</span>: Collision experiments (lab &amp; microgravity (drop tower), small dust aggregates (of μm-sized particles) onto solid targets), results: slow impacts in lab: formation of fluffy dust layer (gravity induced compaction in that), fast impacts in microgravity (v &gt; few m/s): disruption of agglomerates, slower impacts in microgravity: sticking and removal from target, slow impacts in microgravity: sticking probability = 1, formation of compact dust layer, slowest impacts in microgravity: no compaction -&gt; growth of very porous dust layer. Computer simulations based on rolling friction force and break-up energy =&gt; planet formation: dust aggregates below a few cm in diameter not expected to be subject to impact compaction	75</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id12">[<a class="reference internal" href="../../bibliography.html#id12" title="C. M. Sorace, M. Y. Louge, M. D. Crozier, and V. H.C. Law. High apparent adhesion energy in the breakdown of normal restitution for binary impacts of small spheres at low speed. Mechanics Research Communications, 36:364-368, 4 2009. doi:10.1016/j.mechrescom.2008.10.009.">Sorace <em>et al.</em>, 2009</a>]</span>: Collision experiments (head-on, two identical small particles, acrylic/ceramic/steel, suspended by resilient strands, impact velocity low enough for adhesion), COR lowered by adhesion, apparent adhesion surface energy larger than expected.</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id13">[<a class="reference internal" href="../../bibliography.html#id37" title="Torsten Poppe, Ju  Rgen Blum1, and Thomas Henning. Analogous experiments on the stickiness of micron-sized preplanetary dust. THE ASTROPHYSICAL JOURNAL, 533:454-471, 2000.">Poppe <em>et al.</em>, 2000</a>]</span>: <strong>different dust materials (silica, diamond, enstatite, silicon carbide)</strong>, stickier than theoretically predicted, stickiness depends more on size/shape/roughness than on material</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Hence how is the size / shape / surface modified by the collision</p>
+<p class="last">-&gt; Next chapter</p>
+</div>
+<div class="section" id="modification-from-collision">
+<h4>Modification from collision<a class="headerlink" href="#modification-from-collision" title="Permalink to this heading">#</a></h4>
+<div class="section" id="grain-charging">
+<h5>Grain charging<a class="headerlink" href="#grain-charging" title="Permalink to this heading">#</a></h5>
+<ul class="simple">
+<li><span id="id14">[<a class="reference internal" href="../../bibliography.html#id38" title="Torsten Poppe, Ju  Rgen Blum, and Thomas Henning. Experiments on collisional grain charging of micron-sized preplanetary dust. THE ASTROPHYSICAL JOURNAL, 533:472-480, 2000.">Poppe <em>et al.</em>, 2000</a>]</span>: Collision experiments on collisional charging (μm-sized grains impacting target surface (non-conducting)), reason: former experiments (particles returning to target after rebound, particle deposition on targets in presence of conducting materials), results: collisional charging stronger than anticipated, needs to be considered (preplanetary dust aggregation, lightning formation in solar nebula, charged grain coupling to magnetic fields).</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="aggregate-collision-parameter-space">
+<h3>Aggregate collision parameter space<a class="headerlink" href="#aggregate-collision-parameter-space" title="Permalink to this heading">#</a></h3>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column docutils">
+Explanation</div>
+<div class="sd-col sd-d-flex-column docutils">
+<img alt="../../_images/Collision-parameter-space.png" src="../../_images/Collision-parameter-space.png" />
+<ul class="simple">
+<li><span id="id15">[<a class="reference internal" href="../../bibliography.html#id52">Blum, 2010</a>]</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="computation">
+<h2>Computation<a class="headerlink" href="#computation" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><span id="id16">[<a class="reference internal" href="../../bibliography.html#id146" title="Yukihiko Hasegawa, Takeru K. Suzuki, Hidekazu Tanaka, Hiroshi Kobayashi, and Koji Wada. Collisional growth and fragmentation of dust aggregates. ii. mass distribution of icy fragments. The Astrophysical Journal, 944:38, 2 2023. URL: https://iopscience.iop.org/article/10.3847/1538-4357/acadda, doi:10.3847/1538-4357/acadda.">Hasegawa <em>et al.</em>, 2023</a>]</span></li>
+</ul>
+</div>
+<div class="section" id="collision-experiments">
+<span id="content-references-title2"></span><h2>Collision Experiments<a class="headerlink" href="#collision-experiments" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><strong>Review</strong>: <span id="id17">[<a class="reference internal" href="../../bibliography.html#id191" title="Jürgen Blum and Gerhard Wurm. The growth mechanisms of macroscopic bodies in protoplanetary disks. Annual Review of Astronomy and Astrophysics, 46:21-56, 2008. doi:10.1146/annurev.astro.46.060407.145152.">Blum and Wurm, 2008</a>]</span></li>
+</ul>
+<div class="section" id="microgravity">
+<h3>Microgravity<a class="headerlink" href="#microgravity" title="Permalink to this heading">#</a></h3>
+<p>Few momments of “zero G”</p>
+<p>Allow for much lower velocity collisions.</p>
+<div class="section" id="parabolic-flights">
+<h4>Parabolic flights<a class="headerlink" href="#parabolic-flights" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id18">[<a class="reference internal" href="../../bibliography.html#id81">Heißelmann <em>et al.</em>, 2011</a>]</span>: Collision experiments (microgravity (parabolic flight), 0.1 – 0.5 m/s, dust / ice), instrument description, results: mostly bouncing, translational energy loss ≈ 95 %.</li>
+</ul>
+</div>
+<div class="section" id="sounding-rockets">
+<h4>Sounding Rockets<a class="headerlink" href="#sounding-rockets" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id19">[<a class="reference internal" href="../../bibliography.html#id41" title="Maya Krause and Jürgen Blum. Growth and form of planetary seedlings: results from a sounding rocket microgravity aggregation experiment. Physical Review Letters, 7 2004. doi:10.1103/PhysRevLett.93.021103.">Krause and Blum, 2004</a>]</span>: Collision experiment (microgravity (sounding rocket), Brownian motion-induced collisions), results: dust agglomerates have fractal dimensions as low as 1.4, temporal evolution of mean agglomerate mass described by power law, collision cross section = geometrical cross section, mass-distribution function.</li>
+</ul>
+</div>
+<div class="section" id="drop-tower-experiments">
+<h4>Drop tower experiments<a class="headerlink" href="#drop-tower-experiments" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id20">[<a class="reference internal" href="../../bibliography.html#id72" title="Jürgen Blum, Eike Beitz, Mohtashim Bukhari, Bastian Gundlach, Jan Hendrik Hagemann, Daniel Heißelmann, Stefan Kothe, Rainer Schräpler, Ingo von Borstel, and René Weidling. Laboratory drop towers for the experimental simulation of dust-aggregate collisions in the early solar system. Journal of Visualized Experiments, 6 2014. doi:10.3791/51541.">Blum <em>et al.</em>, 2014</a>]</span>: Collision experiments (description of lab dropt towers for dust (≤ 10 cm, ≤ 70 % porosity) collisions (0.01 m/s ≤ v ≤ 10 m/s)).</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Nice explanatory video to extract - Done</p>
+<p class="last">Should I put it in a dropdown ?</p>
+</div>
+<div class="full-width docutils">
+<iframe id="embed-iframe" allowTransparency="true" allow="encrypted-media *" allowfullscreen height="830" width="920" border="0" scrolling="no" frameborder="0" marginwheight="0" marginwidth="0" src="https://www.jove.com/fr/embed/player?id=51541&t=1&s=1&fpv=1" ><p><a title="Laboratory Drop Towers for the Experimental Simulation of Dust-aggregate Collisions in the Early Solar System" href="https://www.jove.com/fr/v/51541/laboratory-drop-towers-for-experimental-simulation-dust-aggregate" target="_blank" >Laboratory Drop Towers for the Experimental Simulation of Dust-aggregate Collisions in the Early Solar System</a></p></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dust-collisions">
+<h2>Dust Collisions<a class="headerlink" href="#dust-collisions" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><span id="id21">[<a class="reference internal" href="../../bibliography.html#id73" title="J. Deckers and J. Teiser. Macroscopic dust in protoplanetary disks - from growth to destruction. Astrophysical Journal, 12 2014. doi:10.1088/0004-637X/796/2/99.">Deckers and Teiser, 2014</a>]</span>: Collisions experiments (small drop tower, p &lt; 0.5 mbar, 6.68 m/s, agglomerates of quartz dust (irregularly shaped μm-sized grains), cm-sized projectile (volume filling factor 0.466, varying height, diameter, mass), dm-sized target (1.5 kg, 12 cm diameter and height, volume filling factor 0.44)), results: low collision energies: mass transfer to target, projectile destroyed, accretion efficiency decreasing with increasing obliquity and increasing difference in filling factor (projectile more compact than target), accretion efficiency increases with increasing collision energy until threshold (298 mJ), beyond threshold: catastrophic disruption of target -&gt; critical fragmentation strength: 190 mJ/kg (larger than expected), mass distribution of fragments: more small fragments for higher collision energies, implication for planet formation: smaller particles couple better to gas-drag -&gt; re-accretion more likely.</li>
+<li><span id="id22">[<a class="reference internal" href="../../bibliography.html#id43" title="C. W. Ormel, M. Spaans, and A. G.G.M. Tielens. Dust coagulation in protoplanetary disks: porosity matters. Astronomy and Astrophysics, 461:215-232, 1 2007. doi:10.1051/0004-6361:20065949.">Ormel <em>et al.</em>, 2007</a>]</span>: Modelling (coupling between dust and gas depends on porosity, aim: quantify influence in turbulent disk, three regimes: hit-and-stick, compaction, fragmentation), results: three stages (initially growth driven by Brownian motion -&gt; high porosity, then turbulent higher velocities -&gt; compaction, then settling out to the mid-plane, aggregates can grow to (porous) sizes of ≈ 10 cm in a few thousand years, before raining out to mid-plane.</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id23">[<a class="reference internal" href="../../bibliography.html#id11" title="Philipp Reissaus, Tomas Waldemarsson, Jürgen Blum, Dominik Clément, Isabel Llamas, Harald Mutschke, and Frank Giovane. Sticking efficiency of nanoparticles in high-velocity collisions with various target materials. Journal of Nanoparticle Research, 8:693-703, 10 2006. doi:10.1007/s11051-006-9102-9.">Reissaus <em>et al.</em>, 2006</a>]</span>: Collision experiments (Al2O3 (5 – 50 nm) &amp; C (10 – 20 nm) particles produced by laser ablation, impacting on target (C, Au, grease), 10-5 mbar, 1 km/s, sticking efficiency measured by microbalance), result: moderate to high sticking probabilities -&gt; capture and retrieval of atmospheric particles feasible.</li>
+</ul>
+<div class="section" id="high-speed">
+<h3>High speed<a class="headerlink" href="#high-speed" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><span id="id24">[]</span>: dust (mm-size to cm-size target), v ≤ 25 m/s, net growth at high speed collisions,  fast ejecta 500 m, 40 % of impact velocity)	72</li>
+</ul>
+</div>
+<div class="section" id="dust-agglomerates">
+<h3>Dust agglomerates<a class="headerlink" href="#dust-agglomerates" title="Permalink to this heading">#</a></h3>
+<hr class="docutils" />
+<p><strong>Review</strong></p>
+<ul class="simple">
+<li><span id="id25">[<a class="reference internal" href="../../bibliography.html#id42" title="Jürgen Blum. Dust agglomeration. Advances in Physics, 55:881-947, 11 2006. doi:10.1080/00018730601095039.">Blum, 2006</a>]</span>: Review (physical interactions that lead to sticking in gaseous environments, morphologies of resulting dust aggregates, modelling (temporal evolution + mass distribution of aggregates))</li>
+</ul>
+<hr class="docutils" />
+<p><strong>Simulations</strong></p>
+<ul class="simple">
+<li><span id="id26">[<a class="reference internal" href="../../bibliography.html#id45">Wada <em>et al.</em>, 2007</a>]</span>: Numerical simulations (dust aggregate collisions, 2D head-on), compression &amp; disruption, degree of maximum compression determined by ratio of rolling energy to breaking energy, ice aggregates become more compact than quartz aggregates (same impact conditions), aggregates harder to disrupt with increasing number of particles.</li>
+<li><span id="id27">[<a class="reference internal" href="../../bibliography.html#id44">Wada <em>et al.</em>, 2008</a>]</span>: Numerical simulations (dust aggregate collisions, 3D head-on).</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id28">[<a class="reference internal" href="../../bibliography.html#id62" title="Rainer Schräpler, Jürgen Blum, Alexander Seizinger, and Wilhelm Kley. The physics of protoplanetesimal dust agglomerates. vii. the low-velocity collision behavior of large dust agglomerates. Astrophysical Journal, 10 2012. doi:10.1088/0004-637X/758/1/35.">Schräpler <em>et al.</em>, 2012</a>]</span>: Microgravity collision experiments (macroscopically homogeneous dust agglomerates of μm-sized silica particles, volume filling factors: 0.3 &amp; 0.4, size: 5 cm, impact velocities: 0.01 – 0.5 m/s), COR + fragmentation velocity measured, ε(v): low v – ε decreases with increasing v, then constant, then onset of fragmentation, interpretation: transition from solid-body-dominated to granular-medium-dominated behaviour, molecular dynamics simulation to model experimental results, extension of earlier work (improved measurements, better statistics, theoretical approach), applications: protoplanetary disks, debris disks, planetary rings.</li>
+<li><span id="id29">[<a class="reference internal" href="../../bibliography.html#id53" title="Rainer Schräpler and Jürgen Blum. The physics of protoplanetesimal dust agglomerates. vi. erosion of large aggregates as a source of micrometer-sized particles. Astrophysical Journal, 6 2011. doi:10.1088/0004-637X/734/2/108.">Schräpler and Blum, 2011</a>]</span>: Collision experiments (erosion of macroscopic dust agglomerates (μm-sized silica spheres) via impact of μm-sized particles), initial phase (impact erodes up to 10 particles), then compression by impacts (partial passivation of agglomerate) =&gt; no erosion for v &lt;̰ 30 m/s, erosion reduced by 1 order of magnitude for v &gt;̰ 30 m/s, confirmed by numerical model, built analytical disk model =&gt; erosion is strong source of μm-sized particles in pp disk, explains observations (Furlan <a class="reference external" href="http://et.al" rel="noopener noreferrer" target="_blank">et.al</a>)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Check furlan et al</p>
+</div>
+<ul class="simple">
+<li><span id="id30">[<a class="reference internal" href="../../bibliography.html#id60" title="A. Seizinger, R. Speith, and W. Kley. Compression behavior of porous dust agglomerates. Astronomy and Astrophysics, 2012. doi:10.1051/0004-6361/201218855.">Seizinger <em>et al.</em>, 2012</a>]</span>: Modelling (molecular dynamics approach to include normal forces, rolling, twisting and sliding between dust grains), aim: improve model for interaction of individual monomers to determine threshold between growth and destruction</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id31">[<a class="reference internal" href="../../bibliography.html#id57" title="R. Weidling, C. Güttler, and J. Blum. Free collisions in a microgravity many-particle experiment. i. dust aggregate sticking at low velocities. Icarus, 218:688-700, 3 2012. doi:10.1016/j.icarus.2011.10.002.">Weidling <em>et al.</em>, 2012</a>]</span>: sticking threshold velocity of mm dust aggregates could not be reached in the lab so far -&gt; microgravity experiments (&gt; 0.1 cm/s, 0.5 – 2 mm), sticking for few collisions (0.2 – 3 cm/s) -&gt; no sharp bouncing barrier, dust collision model -&gt; deduced velocity below dust will always stick (8 x 10-5 m/s for mm dust).</li>
+<li><span id="id32">[<a class="reference internal" href="../../bibliography.html#id54" title="E. Beitz, C. Güttler, J. Blum, T. Meisner, J. Teiser, and G. Wurm. Low-velocity collisions of centimeter-sized dust aggregates. Astrophysical Journal, 7 2011. doi:10.1088/0004-637X/736/1/34.">Beitz <em>et al.</em>, 2011</a>]</span>: lab dust (cm – decimeter size) collisions, setup 1 - microgravity (8x10-3 – 2 m/s), setup 2 - mass transfer (fragmentation velocity 20 cm/s), critical energy for disruptive collisions Q* two orders of magnitude lower than in literature, accretion efficiency (few %) depends on impact velocity &amp; porosity</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Using video setup above (group together)</p>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id33">[<a class="reference internal" href="../../bibliography.html#id51" title="Stefan Kothe, Carsten Güttler, and Jürgen Blum. The physics of protoplanetesimal dust agglomerates. v. multiple impacts of dusty agglomerates at velocities above the fragmentation threshold. Astrophysical Journal, 725:1242-1251, 12 2010. doi:10.1088/0004-637X/725/1/1242.">Kothe <em>et al.</em>, 2010</a>]</span>: Collision experiments on mass transfer in shattering collisions (lab + drop tower, agglomerates of μm-sized silica spheres as projectile + target (volume filling factors: 0.15 &amp; 0.45 respectively), velocities 1.5 – 6 m/s), result: linear increase of accretion efficiency with impact v (12 – 21 % of projectile mass), growth of conical structure on target after &lt; 100 impacts (volume filling factor: 0.15 – 0.4, increasing with increasing impact v).</li>
+<li><span id="id34">[<a class="reference internal" href="../../bibliography.html#id34" title="Jurgen Blum and Michael Munch. Blumexperimental investigations on aggregate-aggregate collisions in the early solar nebula. Icarus, 106:151-167, 1993.">Blum and Munch, 1993</a>]</span>: Collision experiments (vacuum, 2 mm-sized dust aggregates (ZrSiO4 ≤ 1 μm, 74 % porosity / SiO2 ≈ 12 nm, 97 % porosity), 0.15 – 4 m/s, central to grazing collisions, mass ratios of collision partners 1:1 &amp; 1:66), results: no coagulation (sticking), low v: bouncing, high v: transition to fragmentation (1:1 experiment: transition &#64; v ≈ 1m/s (ZrSiO4), &#64; ≈ 4 m/s (SiO2) / 1:66 experiment: transition unclear), fragmentation of 1:1 ZrSiO4: abundance of small fragments increases with increasing v and decreasing impact parameter, power law mass distribution of fragments -&gt; fragmentation model (constant free surface energy per unit surface area of fragments, impact parameter-dependent efficiency for transition of kinetic collision energy into free surface energy of fragments) -&gt; predicts complete disintegration of the ZrSiO4 aggregates for v ≥ 50 m/s, prediction based on van der Waals-bonded constituents: ≈ 3 m/s, typical velocities for the preplanetary nebula -&gt; catastrophic fragmentations could be frequent if aggregates formed by weak surface forces.</li>
+</ul>
+<div class="section" id="centimeter-size">
+<h4>Centimeter size<a class="headerlink" href="#centimeter-size" title="Permalink to this heading">#</a></h4>
+<div class="full-width docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<ul class="simple">
+<li><span id="id35">[<a class="reference internal" href="../../bibliography.html#id46" title="Jens Teiser and Gerhard Wurm. High-velocity dust collisions: forming planetesimals in a fragmentation cascade with final accretion. Monthly Notices of the Royal Astronomical Society, 393:1584-1594, 2009. doi:10.1111/j.1365-2966.2008.14289.x.">Teiser and Wurm, 2009</a>]</span>: lab dust collisions, up to 56.5 m/s, cm – decimetre size targets, sub-mm – cm size projectiles, varying shape, projectiles &gt; 1 mm -&gt; slight erosion of target, decimetre targets don’t break up, small ejecta produced, projectiles &lt; 1 mm accrete (even at high velocities.</li>
+</ul>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="figure align-default" id="id86">
+<img alt="../../_images/Planetesimal-formation-scenario.png" src="../../_images/Planetesimal-formation-scenario.png" />
+<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text">A model for planetesimal formation. Ejecta in fast collisions only get smaller and do not grow again in mutual collisions. Eventually ejecta get small enough to be (re)accreted by a large object.</span><a class="headerlink" href="#id86" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="decimeter-size">
+<h4>Decimeter size<a class="headerlink" href="#decimeter-size" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id36">[<a class="reference internal" href="../../bibliography.html#id49" title="J. Teiser and G. Wurm. Decimetre dust aggregates in protoplanetary discs. Astronomy and Astrophysics, 505:351-359, 10 2009. doi:10.1051/0004-6361/200912027.">Teiser and Wurm, 2009</a>]</span>: collision experiments, SiO2 (m) aggregates (sub-mm) with dust targets, 7.7 m/s (expected for decimetre size bodies in protoplanetary disks), part of projectile sticks directly, small parts aggregate later by gravity, crust growing (several cm thick), initially very porous (31 % filing), compacting in consecutive collisions, average COR 0.29.</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="multiple-collisions">
+<h4>Multiple Collisions<a class="headerlink" href="#multiple-collisions" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id37">[<a class="reference internal" href="../../bibliography.html#id47" title="René Weidling, Carsten Güttler, Jürgen Blum, and Frithjof Brauer. The physics of protoplanetesimal dust agglomerates. iii. compaction in multiple collisions. Astrophysical Journal, 696:2036-2043, 5 2009. doi:10.1088/0004-637X/696/2/2036.">Weidling <em>et al.</em>, 2009</a>]</span>: Collision experiments (highly porous (volume filling factor 0.15) dust aggregates (of spherical 1.5 μm grains) with solid plate, 0.2 m/s, multiple (≤ 2600) collisions with same aggregate), results: volume filling factor increased by a factor of &gt; 2, fragmentation in few cases (not expected, as threshold is usually higher v).</li>
+</ul>
+</div>
+</div>
+<div class="section" id="chondrules">
+<h3>Chondrules<a class="headerlink" href="#chondrules" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><span id="id38">[<a class="reference internal" href="../../bibliography.html#id29" title="E. Beitz, C. Güttler, R. Weidling, and J. Blum. Free collisions in a microgravity many-particle experiment - ii: the collision dynamics of dust-coated chondrules. Icarus, 218:701-706, 3 2012. doi:10.1016/j.icarus.2011.11.036.">Beitz <em>et al.</em>, 2012</a>]</span>: microgravity collisions of dust, chondrules, chondrules with dust, dust coated chondrules (2 – 3 mm, 0.18 – 0.58 chondrule volume filling), few cm/s sticking velocity for dust coated chondrules, collisions with material mix (dust coated chondrule or chondrules colliding with dust) stickier than single materials, chondrules might act as catalyser for planetesimal growth.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ice-particles-collisions">
+<h2>Ice Particles Collisions<a class="headerlink" href="#ice-particles-collisions" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><span id="id39">[<a class="reference internal" href="../../bibliography.html#id120">Deckers and Teiser, 2016</a>]</span> : collision experiments (water ice), cm projectiles on decimetre targets, 15 – 45 m/s, 255.8 K, disruptive sticking (low efficiency), upper threshold depends on projectile size (no mass transfer above that), near snowline evaporation and condensation expected to produce solid ice, free fall collisions (7 m/s, cm ice spheres, fragmentation threshold &amp; COR).</li>
+<li><span id="id40">[<a class="reference internal" href="../../bibliography.html#id112" title="Yuri Shimaki and Masahiko Arakawa. Experimental study on collisional disruption of highly porous icy bodies. Icarus, 218:737-750, 4 2012. doi:10.1016/j.icarus.2012.01.021.">Shimaki and Arakawa, 2012</a>]</span>:</li>
+<li><span id="id41">[<a class="reference internal" href="../../bibliography.html#id113" title="Yuri Shimaki and Masahiko Arakawa. Low-velocity collisions between centimeter-sized snowballs: porosity dependence of coefficient of restitution for ice aggregates analogues in the solar system. Icarus, 221:310-319, 9 2012. doi:10.1016/j.icarus.2012.08.005.">Shimaki and Arakawa, 2012</a>]</span>:</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id42">[<a class="reference internal" href="../../bibliography.html#id111" title="Piroz Zamankhan. Simulations of collision of ice particles. Communications in Nonlinear Science and Numerical Simulation, 15:1538-1552, 6 2010. doi:10.1016/j.cnsns.2009.06.029.">Zamankhan, 2010</a>]</span>: develop realistic model for ice-structure interaction, analysis of Bridges 1984 ice ball experiments, difficult to predict onset of fragmentation/fracturing, most energy dissipation is result of racturing at contact surface, questions validity of constitutive models (e.g. Brilliantov/Hertzsch).</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id43">[<a class="reference internal" href="../../bibliography.html#id110" title="C. Schäfer, R. Speith, and W. Kley. Collisions between equal-sized ice grain agglomerates. Astronomy and Astrophysics, 470:733-739, 8 2007. doi:10.1051/0004-6361:20077354.">Schäfer <em>et al.</em>, 2007</a>]</span>: numerical study, collisional outcome of low velocity impacts, equal sized porous agglomerates (too large for lab experiments), growth for head-on collisions seems possible, but very little sticking for most material strengths, rotation for glancing collisions, no significant compaction for low velocity impacts</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id44">[<a class="reference internal" href="../../bibliography.html#id101">Hatzes <em>et al.</em>, 1988</a>]</span>: experiments, water ice spheres, disc pendulum, 85 K, 10-5 torr, COR: ε(v)= C exp (−γv), 0.015 – 2 cm/s, COR lowered by 10 – 30 % if surface rough/frosted, frost changes COR from exponential to power-law behaviour, application of results to Saturn’s rings</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id45">[<a class="reference internal" href="../../bibliography.html#id100" title="Manfred A Lange and Thomas J Ahrens. Impact experiments in low-temperature ice. ICARUS, 69:506-518, 1987.">Lange and Ahrens, 1987</a>]</span>: Collision experiments (cubic &amp; cylindrical ice targets (20 cm), 81 &amp; 257 K, 100 – 640 m/s), results: crater diameters: 7 – 15 cm (2 – 3 x larger than for basalt at same conditions, 10 – 100 x larger than for crystalline rock), craters increase slightly with increasing target temperature.</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id46">[<a class="reference internal" href="../../bibliography.html#id99">Bridges <em>et al.</em>, 1984</a>]</span>: experiment results, COR of icy particles, Voyager spacecraft results, thickness of Saturn’s rings &lt; 150 m, several ringlets (few m – 10 km radial dimension), some unstable to viscous diffusion -&gt; optical depth variations</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id47">[]</span>: microgravity experiments, collisions of sub-mm dust agglomerates (from m monomer grains), internal structure studied by X-ray CT before experiments -&gt; no rim compaction -&gt; no preparation artifacts, shallow power-law relation between aggregate mass and bouncing barrier velocity, no sharp transition sticking/bouncing, aggregates-of-aggregates stick at higher velocities than homogeneous agglomerates</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id48">[<a class="reference internal" href="../../bibliography.html#id28" title="Akira Kouchi, Tatsuyuki Kudo, Hideyuki Nakano, Masahiko Arakawa, Naoki Watanabe, Michiya Higa, and Norikazu Maeno. Rapid growth of asteroids owing to very sticky interstellar organic grains sin-iti sirono. The Astrophysical Journal, 566:121-124, 2002.">Kouchi <em>et al.</em>, 2002</a>]</span>: Experiments (organic covered ice and silicate grains), sticking threshold velocity 5m/s.</li>
+</ul>
+<div class="section" id="comparisons">
+<h3>Comparisons<a class="headerlink" href="#comparisons" title="Permalink to this heading">#</a></h3>
+<div class="section" id="co2-h2o">
+<h4>CO2 + H2O<a class="headerlink" href="#co2-h2o" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id49">[<a class="reference internal" href="../../bibliography.html#id26" title="Grzegorz Musiolik, Jens Teiser, Tim Jankowski, and Gerhard Wurm. Ice grain collisions in comparison: co 2 , h 2 o, and their mixtures. The Astrophysical Journal, 827:63, 8 2016. doi:10.3847/0004-637x/827/1/63.">Musiolik <em>et al.</em>, 2016</a>]</span>: Collision experiments (CO2, H2O, 50 % mixture of both, 80 K, 1 mbar, 90 μm particle size), results: CO2 less sticky than H2O, more like silica, sticking threshold velocity increases with increasing water content.</li>
+<li><span id="id50">[<a class="reference internal" href="../../bibliography.html#id25" title="M Arakawa, M Higa, J Leliwa-Kopystyã Nski, and N Maeno. Impact cratering of granular mixture targets made of h 2 o ice-co 2 ice-pyrophylite. Planetary and Space Science, 48:1437-1446, 2000. URL: www.elsevier.nl/locate/planspasci.">Arakawa <em>et al.</em>, 2000</a>]</span>: Collision experiments (3-component targets to simulate cometary nucleus/planetary regolith (H2O:CO2: pyrophylite = 1:1:0.74), nonheated/heated by thermal radiation), samples formed layer structure inside, results: cratering pattern strongly depends on sample history, nonheated targets: crates with regular shape, ejected volume ~ impact energy E, depth ~E0.5, thermally stratified samples: large amount of loose sub-crustal material ejected (sometimes leading to small hole and huge cavity underneath (velocity dependent).</li>
+</ul>
+</div>
+<div class="section" id="co2">
+<h4>CO2<a class="headerlink" href="#co2" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id51">[<a class="reference internal" href="../../bibliography.html#id24" title="Grzegorz Musiolik, Jens Teiser, Tim Jankowski, and Gerhard Wurm. Collisions of co 2 ice grains in planet formation. The Astrophysical Journal, 818:16, 2 2016. doi:10.3847/0004-637x/818/1/16.">Musiolik <em>et al.</em>, 2016</a>]</span>: lab experiments CO2 (snowline ≈ 10 AU), 80 K, particles (≈ 100 m and target, 0 – 2.5 m/s, bouncing barrier ≈ 0.04 m/s, fragmentation &gt; 1 m/s, analytical model for COR and fragmentation strength, collisional behaviour resembles dust, one order of magnitude smaller bouncing barrier, collisional growth most likely between H2O and CO2 snowlines.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="impact-experiments">
+<h3>Impact experiments<a class="headerlink" href="#impact-experiments" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><span id="id52">[<a class="reference internal" href="../../bibliography.html#id32" title="Shin ichi Kawakami, Hitoshi Mizutani, Yasuhiko Takagi, Mineo Kumazawa, and Manabu Kato. Impact experiments on ice. Journal of Geophysical Research, 88:5806-5814, 1983. doi:10.1029/JB088iB07p05806.">ichi Kawakami <em>et al.</em>, 1983</a>]</span>: Collision experiments (cratering and fragmentation of pure ice targets, cylindrical projectiles (aluminium, poly-carbonate, teflon, pyrophyllite), 110 – 680 m/s), results: craters in ice about 2 times larger than in basalt in the same energy range, depth/diameter ratios (0.1 – 0.3) close to basalt values, specific energy for complete destruction of ice: ≈ 50 J/kg (two orders of magnitude lower than for basalt), very large impact craters (Callisto/Mimas) must have fractured the whole satellite.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Need to make a section for satellite collision ?</p>
+</div>
+</div>
+<div class="section" id="dust-ice">
+<h3>Dust + Ice<a class="headerlink" href="#dust-ice" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><span id="id53">[<a class="reference internal" href="../../bibliography.html#id80" title="Masahiko Arakawa and Daisuke Tomizuka. Ice - silicate fractionation among icy bodies due to the difference of impact strength between ice and ice-silicate mixture. Icarus, 170:193-201, 7 2004. doi:10.1016/j.icarus.2004.02.009.">Arakawa and Tomizuka, 2004</a>]</span>: Collision experiments (impact disruption of ice-silicate mixtures, silicate mass ratio 0 – 0.5, porosities: 0 – 37 %, 150 – 670 m/s), results: impact strength decreases with increasing porosity (mixture) / increases with porosity (pure H2O), higher silicate ratios enhanced strength.</li>
+<li><span id="id54">[<a class="reference internal" href="../../bibliography.html#id78" title="Masahiko Arakawa, Jacek Leliwa-Kopystynski, and Norikazu Maeno. Impact experiments of porous icy-silicate cylindrical blocks and the implication for disruption and accumulation of small icy bodies. Icarus, 158:516-531, 2002. doi:10.1006/icar.2002.6893.">Arakawa <em>et al.</em>, 2002</a>]</span>: Collision experiments (pure ice &amp; ice-silica mix, porosity ≤ 55 %, 150 – 670 m/s, 263 K), results: maximum ejecta velocity (normalized by impact velocity) decreases with increasing porosity &amp; is independent of material (mix), impact strength: pure ice: increase with increasing porosity, mixture: decrease with increasing porosity, three types of collisional outcome: mass loss, rubble pile formation, regolith formation (compaction).</li>
+<li><span id="id55">[<a class="reference internal" href="../../bibliography.html#id74" title="M. A. Lange and T. J. Ahrens. The dynamic tensile strength of ice and ice-silicate mixtures. Journal of Geophysical Research, 88:1197-1208, 1983. doi:10.1029/JB088iB02p01197.">Lange and Ahrens, 1983</a>]</span>: Characterization experiments (strain rate and dynamic tensile strength of ice and ice-silicate mixtures), results: strengths vary between 1.6 – 22 MPa, strength increases with increasing silicate content and with applied strain rate (10-2 – 104 s-1), strength-strain relation similar to other geological materials.</li>
+</ul>
+</div>
+<div class="section" id="ice-aggregates-collisions">
+<h3>Ice aggregates collisions<a class="headerlink" href="#ice-aggregates-collisions" title="Permalink to this heading">#</a></h3>
+<p>The arrangements of grains in an aggregate can be determined using two methods:</p>
+<ul class="simple">
+<li>BCCA (ballistic–cluster–cluster–aggregation method)</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">citation - Meakin 1991 ?</p>
+</div>
+<ul class="simple">
+<li><span id="id56">[<a class="reference internal" href="../../bibliography.html#id93" title="Sin-iti Sirono and Haruta Ueno. Collisions between sintered icy aggregates. The Astrophysical Journal, 841:36, 5 2017. doi:10.3847/1538-4357/aa6fad.">Sirono and Ueno, 2017</a>]</span>: Numerical simulation: collisions of sintered icy dust aggregates, including temperature induced growth of sinter necks. Results: sintering strongly affects collisional growth, porous aggregates: critical velocity for growth 20 m/s (non-sintered 50 m/s), compact aggregates: main outcome is bouncing</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="sticking-properties">
+<h3>Sticking properties<a class="headerlink" href="#sticking-properties" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><span id="id57">[<a class="reference internal" href="../../bibliography.html#id105" title="Kimberley D Supulver, Frank G Bridges, Salvador Tiscareno, John Lievore, and D N C Lin. The sticking properties of water frost produced under various ambient conditions. ICARUS, 129:539-554, 1997.">Supulver <em>et al.</em>, 1997</a>]</span>: water frost sticking properties, thin porous frost stickier than thick dense frost, temperature fluctuations increase stickiness, frost bond elastic (like spring), they suggest frost to be in proto-planetary nebulae</li>
+</ul>
+<div class="section" id="sticking-between-monomers">
+<h4>Sticking between monomers<a class="headerlink" href="#sticking-between-monomers" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id58">[<a class="reference internal" href="../../bibliography.html#id35">Heim <em>et al.</em>, 1999</a>]</span>: Characterization experiments (adhesion, rolling friction force, silica microspheres, 0.5 – 2.5 μm), result: rolling friction force ≈ 100 x lower than adhesion</li>
+</ul>
+</div>
+<div class="section" id="mass-dependance">
+<h4>Mass dependance<a class="headerlink" href="#mass-dependance" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id59">[<a class="reference internal" href="../../bibliography.html#id104" title="Jam̀es Dilley and Darren Crawford. Mass dependence of energy loss in collisions of icy spheres: an experimental study. Journal of Geophysical Research: Planets, 101:9267-9270, 1996. doi:10.1029/96JE00116.">Dilley and Crawford, 1996</a>]</span>: collision experiments, ice spheres with ice blocks, ≈ 250 K, collisions become inelastic &lt; 1 cm/s, elasticity decreases with decreasing mass</li>
+</ul>
+<div class="section" id="relative-mass">
+<h5>Relative Mass<a class="headerlink" href="#relative-mass" title="Permalink to this heading">#</a></h5>
+<ul class="simple">
+<li><span id="id60">[<a class="reference internal" href="../../bibliography.html#id90" title="Koji Wada, Hidekazu Tanaka, Satoshi Okuzumi, Hiroshi Kobayashi, Toru Suyama, Hiroshi Kimura, and Tetsuo Yamamoto. Growth efficiency of dust aggregates through collisions with high mass ratios. Astronomy and Astrophysics, 2013. doi:10.1051/0004-6361/201322259.">Wada <em>et al.</em>, 2013</a>]</span>: Numerical simulation (collisions of different-sized icy dust aggregates), growth efficiency for nearly head-on collisions increases with size, growth efficiency increases with increasing mass ratio of colliding aggregates, growth possible at several 10 m/s for icy dust.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="size-dependance">
+<h4>Size dependance<a class="headerlink" href="#size-dependance" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id61">[<a class="reference internal" href="../../bibliography.html#id106" title="Michiya Higa, Masahiko Arakawa, and Norikazu Maeno. Size dependence of restitution coefficients of ice in relation to collision strength. ICARUS, 133:310-320, 1998.">Higa <em>et al.</em>, 1998</a>]</span>: size dependence of COR, water ice spheres (1.4 – 36 mm), 1 – 1000 cm/s, 261 K, critical velocity</li>
+<li><span id="id62">[<a class="reference internal" href="../../bibliography.html#id68" title="Thorsten Meisner, Gerhard Wurm, Jens Teiser, and Mathias Schywek. Preplanetary scavengers: growing tall in dust collisions. Astronomy and Astrophysics, 2013. doi:10.1051/0004-6361/201322083.">Meisner <em>et al.</em>, 2013</a>]</span>: lab experiments, self-consistent evolution of dust target under continuous impact of sub-mm dust aggregates (71 m/s) -&gt; mass gain of target, accretion efficiency decreasing with increasing velocity, projectile-mass dependent, target volume filling factor stabilizes at 38 %, large bodies can grow further by sweeping up smaller ones (high efficiency).</li>
+</ul>
+</div>
+<div class="section" id="velocity">
+<h4>Velocity<a class="headerlink" href="#velocity" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id63">[]</span>: Microgravity experiments on granular cooling (vibrated granular medium, inelastic iron beads, 2D geometry, high-speed camera), results: COR (low v: ε increasing with v), time decay of energy in the system (cooling time much shorter than could be explained by constant or decreasing ε), better agreement between experiment and theory requires taking into account either rotational degree of freedom or v-dependence of ε.</li>
+</ul>
+</div>
+<div class="section" id="impact-angle">
+<h4>Impact angle<a class="headerlink" href="#impact-angle" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id64">[<a class="reference internal" href="../../bibliography.html#id55" title="Jens Teiser, Markus Küpper, and Gerhard Wurm. Impact angle influence in high velocity dust collisions during planetesimal formation. Icarus, 215:596-598, 10 2011. doi:10.1016/j.icarus.2011.07.036.">Teiser <em>et al.</em>, 2011</a>]</span>: dust aggregate(from m particles) collisions, small (1-5 mm) on target, 20 m/s, 0° - 45°, supports sweep-up planetesimal formation	64</li>
+</ul>
+</div>
+<div class="section" id="surface-effects">
+<h4>Surface effects<a class="headerlink" href="#surface-effects" title="Permalink to this heading">#</a></h4>
+<hr class="docutils" />
+<p><strong>Theory</strong>:</p>
+<ul class="simple">
+<li><span id="id65">[<a class="reference internal" href="../../bibliography.html#id33" title="K Kendall, N Alford, and J. D. Birchall. A new method for measuring the surface energy of solids. Nature, 1987.">Kendall <em>et al.</em>, 1987</a>]</span>: Experiments (surface energy of Titania/Silica), measure elastic modulus of sub-μm powder assemblies	77</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li><strong>to investigate</strong>:<ul>
+<li>Elastic modulus: Unit of measurement of an object’s or substance’s resistance to being deformed elastically (i.e., non-permanently) when a stress is applied to it</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id66">[<a class="reference internal" href="../../bibliography.html#id108" title="Jan-Martin Hertzsch. A model for surface effects in slow collisions of icy grains. Planetary and Space Science, 50:745-755, 2002. URL: www.elsevier.com/locate/pss.">Hertzsch, 2002</a>]</span>: numerical model, slow collisions, solid grains, planar motion:</li>
+<li>elasticity +</li>
+<li>viscosity +</li>
+<li>soft surface layers +</li>
+<li>adhesion +</li>
+<li>friction,</li>
+<li>COR components, water ice (cm size), critical velocity (bouncing sets in)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Terminology to explore</p>
+</div>
+</div>
+</div>
+<div class="section" id="more">
+<h3>More<a class="headerlink" href="#more" title="Permalink to this heading">#</a></h3>
+<div class="section" id="magnetic">
+<h4>Magnetic<a class="headerlink" href="#magnetic" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id67">[]</span>: Experiments (high coagulation efficiency of 20 nm-sized iron grains, produced in low-pressure H-atmosphere in magnetic field (100 Gauss) -&gt; permanently magnetized), such grains could have been produced in solar nebula by procession of interstellar grains -&gt; could act as “net” for sweeping up silicates -&gt; aid planetesimal formation.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ou-setup">
+<h3>OU setup<a class="headerlink" href="#ou-setup" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><span id="id68">[<a class="reference internal" href="../../bibliography.html#id117">Hill <em>et al.</em>, 2014</a>]</span>: Collision experiments (microgravity, icy particles (4.7 – 10.8 mm diameter, spherical or irregular fragments), 0.27 – 0.51 m/s, 131 – 160 K) colliding with each other, impact parameters: 0 - 1), results: mostly bouncing, few cases of fragmentation, COR evenly spread between 0.08 – 0.65 (average 0.36), ≥ 58 % translational energy lost, ≤ 17 % translational converted to rotational energy, COR not affected by temperature</li>
+<li><span id="id69">[<a class="reference internal" href="../../bibliography.html#id116">Hill <em>et al.</em>, 2014</a>]</span>: Collision experiments (1.5 cm ice spheres (pure / 5 % methanol / 5 % formic acid), 0.01 – 0.19 m/s, 131 – 160 K, 10-5 mbar), results: range of COR values, no correlation to chemical composition / velocity / temperature, surface roughness is dominant factor in explaining range of COR</li>
+</ul>
+</div>
+</div>
+<div class="section" id="collisions-outcomes">
+<h2>Collisions Outcomes<a class="headerlink" href="#collisions-outcomes" title="Permalink to this heading">#</a></h2>
+<div class="section" id="models">
+<h3>Models<a class="headerlink" href="#models" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><span id="id70">[<a class="reference internal" href="../../bibliography.html#id56" title="R. J. Geretshauser, R. Speith, and W. Kley. Collisions of inhomogeneous pre-planetesimals. Astronomy and Astrophysics, 2011. doi:10.1051/0004-6361/201117645.">Geretshauser <em>et al.</em>, 2011</a>]</span>: Modelling (preplanetesimals (inhomogeneous, fluffy, porous, dust aggregates), subsequent collisions), inhomogeneity model based on: density distribution of dust aggregates, typical size of aggregates (cm), smoothed particle hydrodynamics code, porosity model, results: inhomogeneous preplanetesimals more likely destroyed than homogeneous aggregates, size of fragments decreases with increasing inhomogeneity =&gt; possible obstacle to collisional growth (active history = weaker aggregate).</li>
+</ul>
+</div>
+<div class="section" id="growth">
+<h3>Growth<a class="headerlink" href="#growth" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><span id="id71">[<a class="reference internal" href="../../bibliography.html#id63" title="Hidekazu Tanaka, Koji Wada, Toru Suyama, and Satoshi Okuzumi. Growth of cosmic dust aggregates and reexamination of particle interaction models. Progress of Theoretical Physics Supplement, 2012. URL: http://ptps.oxfordjournals.org/.">Tanaka <em>et al.</em>, 2012</a>]</span>: molecular dynamics simulation of particle collisions, dust growth</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id72">[<a class="reference internal" href="../../bibliography.html#id52">Blum, 2010</a>]</span>: review (lab &amp; modelling), collisional sticking alone not enough, streaming and gravitational instability best candidates for planetesimal growth in protoplanetary disk.</li>
+</ul>
+<div class="section" id="id73">
+<h4>Computation<a class="headerlink" href="#id73" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id74">[<a class="reference internal" href="../../bibliography.html#id65" title="Pascale Garaud, Farzana Meru, Marina Galvagni, and Christoph Olczak. From dust to planetesimals: an improved model for collisional growth in protoplanetary disks. Astrophysical Journal, 2 2013. doi:10.1088/0004-637X/764/2/146.">Garaud <em>et al.</em>, 2013</a>]</span>: modelling, velocity distribution includes deterministic motion (from the vertical settling, radial drift, and azimuthal drift) and stochastic motion (from Brownian motion and turbulence), suggest they can thereby overcome bouncing barrier, grow large planetesimals and keep up significant population of small (m) grains.</li>
+</ul>
+</div>
+<div class="section" id="aggregate-formation">
+<h4>Aggregate formation<a class="headerlink" href="#aggregate-formation" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id75">[<a class="reference internal" href="../../bibliography.html#id114" title="Guillem Aumatell and Gerhard Wurm. Ice aggregate contacts at the nm-scale. Monthly Notices of the Royal Astronomical Society, 437:690-702, 2013. doi:10.1093/mnras/stt1921.">Aumatell and Wurm, 2013</a>]</span>: Experiments (nm ice particles), thermal gradient force microscope (measure pull-off forces/twisting torques), ice aggregates in astrophysical settings more robust against restructuring than originally thought, likely grow as fractal aggregates to larger size before they restructure, retain high porosity.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Good work, to read</p>
+</div>
+<div class="section" id="density-evolution">
+<h5>Density evolution<a class="headerlink" href="#density-evolution" title="Permalink to this heading">#</a></h5>
+<ul class="simple">
+<li><span id="id76">[<a class="reference internal" href="../../bibliography.html#id82">Suyama <em>et al.</em>, 2008</a>]</span>: 3D N-body simulations (sequential collisions of aggregates composed of submicron-sized icy particles), density evolution/restructuring/compression, dust aggregates have extremely low density (&lt;0.1 kg m-3).</li>
+</ul>
+</div>
+</div>
+<div class="section" id="sintering">
+<h4>Sintering<a class="headerlink" href="#sintering" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id77">[<a class="reference internal" href="../../bibliography.html#id98" title="Norlkazu Maeno' and Takao Eblnuma. Pressure sintering of ice and its implication to the densification of snow at polar glaciers and ice sheets. J. Phys. Chem, 87:4103-4110, 1983.">Maeno' and Eblnuma, 1983</a>]</span>: Sintering experiments, six or more mechanisms contributing to neck growth simultaneously, review of pressureless sintering processes (vapour transport dominating, surface diffusion important in early stages), densification of snow = pressure sintering (takes into account three diffusional and dislocation creep mechanisms).</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id78">[<a class="reference internal" href="../../bibliography.html#id95" title="P. V. Hobbs and B. J. Mason. The sintering and adhesion of ice. Philosophical Magazine, 9:181-197, 1964. doi:10.1080/14786436408229184.">Hobbs and Mason, 1964</a>]</span>: characterisation experiments (sintering (single and polycrystalline ice spheres (50 – 700 μm diameter), -3 – -20°C ), in air/hydrogen-gas/oil), results: evaporation-condensation theory valid (diffusion through environmental gas enhances neck growth), no evidence of liquid-like surface layer found unless surfaces are contaminated (e.g. by salts).</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>evaporation-condensation theory</strong>: to define</p>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><span id="id79">[<a class="reference internal" href="../../bibliography.html#id94" title="DAISUKE KUROIWA. A study of ice sintering. Tellus, 13:252-259, 5 1961. doi:10.1111/j.2153-3490.1961.tb00082.x.">KUROIWA, 1961</a>]</span>: Characterization experiments (sintering (ice spheres &lt; 200 µm diameter), in saturated air/kerosene environments), results: neck growth rate, ice-bonding (adhesion) is result of solid diffusion</li>
+</ul>
+</div>
+</div>
+<div class="section" id="mass-transfer">
+<h3>Mass Transfer<a class="headerlink" href="#mass-transfer" title="Permalink to this heading">#</a></h3>
+<div class="section" id="erosion">
+<h4>Erosion<a class="headerlink" href="#erosion" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><span id="id80">[<a class="reference internal" href="../../bibliography.html#id69" title="A. Seizinger, S. Krijt, and W. Kley. Erosion of dust aggregates. Astronomy and Astrophysics, 12 2013. doi:10.1051/0004-6361/201322773.">Seizinger <em>et al.</em>, 2013</a>]</span>:model (molecular dynamics, spherical grain interactions, visco-elastic damping force, different sample generation methods), visco-elastic damping crucial to reproduce lab-results, erosion at impact velocities &gt; 5 m/s, compact aggregates harder to erode, increasing projectile size shifts erosion threshold to higher velocities</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="effects-of-collision-on-amorphous-ice">
+<h2>Effects of collision on Amorphous Ice<a class="headerlink" href="#effects-of-collision-on-amorphous-ice" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><span id="id81">[<a class="reference internal" href="../../bibliography.html#id149" title="Jordan K. Steckloff, Gal Sarid, and Brandon C. Johnson. The effects of early collisional evolution on amorphous water ice bodies. The Planetary Science Journal, 4:4, 1 2023. URL: https://iopscience.iop.org/article/10.3847/PSJ/aca75a, doi:10.3847/PSJ/aca75a.">Steckloff <em>et al.</em>, 2023</a>]</span></li>
+</ul>
+</div>
+<div class="section" id="the-bouncing-barrier">
+<h2>The Bouncing Barrier<a class="headerlink" href="#the-bouncing-barrier" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><span id="id82">[<a class="reference internal" href="../../bibliography.html#id70" title="T. Kelling, G. Wurm, and M. Köster. Experimental study on bouncing barriers in protoplanetary disks. Astrophysical Journal, 3 2014. doi:10.1088/0004-637X/783/2/111.">Kelling <em>et al.</em>, 2014</a>]</span>: Long term lab experiments, interaction of 100 dust aggregated with each other (1 mm, mm/s – cm/s, 900 s duration, 105 collisions, 2000 analysed), sticking and fragmentation, no net growth, bouncing barrier is likely limit of self-consistent particle growth.</li>
+<li><span id="id83">[<a class="reference internal" href="../../bibliography.html#id166" title="F. Windmark, T. Birnstiel, C. Güttler, J. Blum, C. P. Dullemond, and Th Henning. Planetesimal formation by sweep-up: how the bouncing barrier can be beneficial to growth. Astronomy and Astrophysics, 2012. doi:10.1051/0004-6361/201118475.">Windmark <em>et al.</em>, 2012</a>]</span>: model, dust growth, effect of probability distribution on growth barriers (bouncing/fragmentation) -&gt; barriers not sharp, small fraction of particles manage to grow orders of magnitude above the main population, velocity distribution softens fragmentation barrier + removes bouncing barrier, broadens size distribution -&gt; seeds for sweep-up.</li>
+<li><span id="id84">[<a class="reference internal" href="../../bibliography.html#id50" title="A. Zsom, C. W. Ormel, C. Güttler, J. Blum, and C. P. Dullemond. The outcome of protoplanetary dust growth: pebbles, boulders, or planetesimals?: ii. introducing the bouncing barrier. Astronomy and Astrophysics, 4 2010. doi:10.1051/0004-6361/200912976.">Zsom <em>et al.</em>, 2010</a>]</span>: collision model based on lab experiments (dust aggregates), investigation of upper size limits for coagulation in protoplanetary disks, dust is modelled as spheres with porous and compact phases (continuous transition), include Brownian motion/radial drift/turbulence, 1 AU, midplane, different gas densities, catastrophic fragmentation very rare, quasi-steady states in distribution function by bouncing, turbulence has non-linear influence, aerodynamic size sorting of particles.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Online material avalable <a class="reference external" href="https://www.aanda.org/articles/aa/olm/2010/05/aa12976-09/aa12976-09.html" rel="noopener noreferrer" target="_blank">here</a></p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Important to stop at the Bouncing barrier</p>
+<ul class="last simple">
+<li>Planetesimals are for next page</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Finish by showing experimental diagram of all collisions</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Planet-formation\Collision"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Migration.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Migration</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Growth.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Growth</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#science-of-collisions">Science of Collisions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-strength">Collision Strength</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#coefficient-of-restitution">Coefficient of restitution ε</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-loss">Energy Loss</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compaction">Compaction</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-outcomes">Collision Outcomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-monomer-to-aggregates">From Monomer to aggregates</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modification-from-collision">Modification from collision</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#grain-charging">Grain charging</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-collision-parameter-space">Aggregate collision parameter space</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation">Computation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-experiments">Collision Experiments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microgravity">Microgravity</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parabolic-flights">Parabolic flights</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sounding-rockets">Sounding Rockets</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-tower-experiments">Drop tower experiments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dust-collisions">Dust Collisions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-speed">High speed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dust-agglomerates">Dust agglomerates</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#centimeter-size">Centimeter size</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decimeter-size">Decimeter size</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-collisions">Multiple Collisions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chondrules">Chondrules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ice-particles-collisions">Ice Particles Collisions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparisons">Comparisons</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#co2-h2o">CO2 + H2O</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#co2">CO2</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-experiments">Impact experiments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dust-ice">Dust + Ice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ice-aggregates-collisions">Ice aggregates collisions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sticking-properties">Sticking properties</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sticking-between-monomers">Sticking between monomers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-dependance">Mass dependance</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-mass">Relative Mass</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#size-dependance">Size dependance</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity">Velocity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-angle">Impact angle</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-effects">Surface effects</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic">Magnetic</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ou-setup">OU setup</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-outcomes">Collisions Outcomes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#models">Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#growth">Growth</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id73">Computation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-formation">Aggregate formation</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#density-evolution">Density evolution</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sintering">Sintering</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-transfer">Mass Transfer</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#erosion">Erosion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-of-collision-on-amorphous-ice">Effects of collision on Amorphous Ice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bouncing-barrier">The Bouncing Barrier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <strong>Vincent Deguin</strong> (with ❤️)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
