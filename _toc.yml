@@ -4,6 +4,40 @@
 format: jb-book
 root: intro
 parts:
+  - caption: ""
+    chapters:
+    - file: to-include
+  - caption: Interstellar Dust
+    chapters:
+    - file: Dust/Science
+    - file: Dust/Dust-Main-en
+  - caption: Ice & Astrochemistry
+    chapters:
+    - file: Amorphous-ice/Science
+    - file: Amorphous-ice/Water/Main_en_Water
+      sections:
+      - file: Amorphous-ice/Water/Water
+      - file: Amorphous-ice/Water/Condensed
+      - file: Amorphous-ice/Water/Models
+      - file: Amorphous-ice/Water/Hexagonal-ice
+    - file: Amorphous-ice/Space/Main_en_Space
+      sections:
+      - file: Amorphous-ice/Space/Solar_System
+      - file: Amorphous-ice/Space/ISM_Obs
+      - file: Amorphous-ice/Space/Dust
+      - file: Amorphous-ice/Space/Ice_Mantle
+    - file: Amorphous-ice/Amorphous/Main_en_Amorphous
+      sections:
+      - file: Amorphous-ice/Amorphous/Discovery_History       
+      - file: Amorphous-ice/Amorphous/Bulk_Properties
+      - file: Amorphous-ice/Amorphous/Surface_Properties
+      - file: Amorphous-ice/Amorphous/Crystalisation
+    - file: Amorphous-ice/Mixed/Main_en_Mixed
+      sections:
+      - file: Amorphous-ice/Mixed/Space_Molecules
+      - file: Amorphous-ice/Mixed/ASW_Mol 
+      - file: Amorphous-ice/Mixed/Astrochemistry     
+      - file: Amorphous-ice/Mixed/Ethane
   - caption: Planet Formation
     chapters:
     - file: Planet-formation/Science
@@ -31,7 +65,10 @@ parts:
       - file: Planet-formation/Levitation/3DObs
       - file: Planet-formation/Levitation/RightWing
       - file: Planet-formation/Levitation/Levitation
+  - caption: Comets & Meteroites
+    chapters:
+    - file: Meteroites/Science
+    - file: Meteroites/Meteroites-Main-en
   - caption: Appendix
     chapters:    
-    - file: to-include
     - file: bibliography
