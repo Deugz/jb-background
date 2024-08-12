@@ -34,3 +34,48 @@ May be better in method ALMA program
 
 ```
 
+
+## Ice
+
+- [Jenny article](https://www.nature.com/articles/s41550-023-02155-x)
+
+- [More](https://arxiv.org/abs/2309.07817)
+
+```{note}
+
+Trouver le preprint
+
+```
+
+## PPD
+
+### Ressources
+
+- [HL Tau youtube video](https://www.youtube.com/watch?v=CKenxfslBMY&list=PLMzuj51UjsPRikmBPvx2o9a_W7G4VGGBM&index=1)
+
+- [Youtube video magnetic influence on PPD](https://www.youtube.com/watch?v=qFls_kKczN0)
+
+
+### Early evolution
+
+- [Article 1](https://www.aanda.org/articles/aa/full_html/2023/12/aa46711-23/aa46711-23.html)
+
+- [Article 2](https://arxiv.org/pdf/2404.14496.pdf)
+
+<video src="_static/video/Circumstellar-disks.mp4" width="100%" height="" controls>
+  Your browser does not support the video tag.
+</video>
+
+
+```{note}
+
+This video is associated with the previous articles
+
+- made with [radmc-3d](https://www.ita.uni-heidelberg.de/~dullemond/software/radmc-3d/)
+
+```
+
+
+
+
+
