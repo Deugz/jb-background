@@ -14,6 +14,12 @@
 ## A Collaborative Effort ?
 
 
+```{note}
+
+- Créer profile for Giulia / Zak in potential collab (JWST and observation focus) 
+
+```
+
 
 
 
